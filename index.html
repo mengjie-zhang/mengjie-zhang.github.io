@@ -179,6 +179,16 @@
     .uses p { margin: 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.5; }
     .exp-tech { margin: 1.6rem 0 0; padding: 1rem 1.1rem; background: var(--sky); color: var(--ink-soft); font-size: .93rem; }
     .exp-tech strong { color: var(--ink); }
+    .exp-demo { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; margin-top: 2.2rem; padding: clamp(1.2rem, 3vw, 2rem); background: var(--ink); color: white; }
+    .exp-clip { margin: 0; }
+    .exp-clip video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #f3f3ef; }
+    .exp-clip figcaption { margin-top: .5rem; color: #9fb3be; font-size: .8rem; }
+    .exp-demo-body { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
+    .exp-demo-body .tag { color: var(--accent-bright); font-weight: 850; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
+    .exp-demo-body h4 { margin: 0; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.25; text-wrap: balance; }
+    .exp-demo-body p { margin: 0; color: #d5e2e7; font-size: .95rem; }
+    .exp-demo-body .button { background: var(--accent-bright); color: var(--ink); border-color: var(--accent-bright); cursor: pointer; font: inherit; font-weight: 760; }
+    .exp-demo-body small { color: #9fb3be; font-size: .8rem; line-height: 1.45; }
     .fine-print { margin-top: 1rem; color: var(--ink-soft); font-size: .8rem; }
     .pub-group { margin: 2.2rem 0 .4rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
     .pub-group:first-child { margin-top: 0; }
@@ -237,6 +247,7 @@
       .section-head { grid-template-columns: 70px 1fr; }
       .demo-card, .experience-card { grid-template-columns: 1fr; }
       .module-demos { grid-template-columns: repeat(2, 1fr); }
+      .exp-demo { grid-template-columns: 1fr; }
       .subhead { grid-template-columns: 1fr; gap: .4rem; margin-top: 3rem; }
       .demo-card .demo-body { grid-template-columns: 1fr; }
     }
@@ -410,6 +421,16 @@
               <p class="exp-tech"><strong>Technical contributions:</strong> adapting the markerless pose model, including added neck degrees of freedom; fine-tuning a deep-learning model that predicts ground reaction forces from video-derived motion, which cut force-prediction error by about half in lifting tasks; and linking it with musculoskeletal simulation and a web interface.</p>
             </div>
           </article>
+          <div class="exp-demo">
+            <figure class="exp-clip"><video src="assets/ra/mskine-export-loop.mp4" poster="assets/ra/mskine-export-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Automatically exported analysis video: source footage, 3D model and lumbar angle"></video><figcaption>Automatically exported analysis video: source footage, 3D model and lumbar angle</figcaption></figure>
+            <div class="exp-demo-body">
+              <span class="tag">Demo</span>
+              <h4>From a phone video to a 3D model and joint angles</h4>
+              <p>Workflow recording: setting up an analysis, reviewing the 3D musculoskeletal model and kinematics, and exporting the analysis video, PDF report and joint-angle data. The clip shows an automatically exported analysis video at half speed.</p>
+              <button class="button" type="button" data-demo-open="4" aria-label="Play the research assistant workflow demo">▶ Watch the workflow demo · 1:10</button>
+              <small>Silent recording with on-screen captions. Results are for movement analysis, not medical diagnosis.</small>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -537,7 +558,17 @@
             </div>
             <p class="exp-tech"><strong>技术贡献：</strong>改进无标记姿态模型并新增颈部自由度；微调由视频运动数据预测地面反作用力的深度学习模型，在搬举任务中将预测误差降低约一半；并将其与肌骨仿真和网页界面打通。</p>
           </div>
-        </article></div></section>
+        </article>
+        <div class="exp-demo">
+            <figure class="exp-clip"><video src="assets/ra/mskine-export-loop.mp4" poster="assets/ra/mskine-export-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="自动导出的分析视频：原视频、三维骨骼模型与腰椎角度"></video><figcaption>自动导出的分析视频：原视频、三维骨骼模型与腰椎角度</figcaption></figure>
+            <div class="exp-demo-body">
+              <span class="tag">演示</span>
+              <h4>从手机视频到三维模型与关节角度</h4>
+              <p>工作流程录屏：设置分析参数、查看三维骨骼模型与运动学结果，并导出分析视频、PDF 报告和关节角度数据。左侧为系统自动导出的分析视频（半速播放）。</p>
+              <button class="button" type="button" data-demo-open="4" aria-label="播放研究助理工作流程演示">▶ 观看工作流程演示 · 1:10</button>
+              <small>无声录屏，配有屏幕字幕。结果用于动作分析，不作医学诊断。</small>
+            </div>
+          </div></div></section>
 
       <section id="publications-zh"><div class="shell"><div class="section-head"><span class="number">05 / 成果</span><h3>同行评议论文与会议报告。</h3></div><div class="publication-list">
         <h4 class="pub-group">期刊论文</h4>
@@ -619,9 +650,11 @@
     setLanguage(savedLang);
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.gallery video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+      document.querySelectorAll('.gallery video, .exp-clip video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
     }
     const demos = [1, 2, 3, 4].map(n => ({ src: `assets/demo/module${n}.mp4`, poster: `assets/demo/module${n}-thumb.jpg` }));
+    demos.push({ src: 'assets/ra/mskine-demo.mp4', poster: 'assets/ra/mskine-demo-poster.jpg' });
+    const MODULES = 4;
     const demoTitles = { en: ['Postural risk', 'Manual handling', 'Static biomechanics', 'Dynamic biomechanics'], zh: ['姿势风险', '手工搬运', '静态生物力学', '动态生物力学'] };
     const modal = document.getElementById('demo-modal');
     const video = document.getElementById('demo-video');
@@ -631,10 +664,16 @@
     const nextBtn = document.getElementById('demo-next');
     let current = 0;
     function loadDemo(k) {
-      current = (k + demos.length) % demos.length;
       const zh = document.documentElement.lang === 'zh-CN';
-      titleEl.textContent = `${zh ? '模块' : 'Module'} 0${current + 1} · ${demoTitles[zh ? 'zh' : 'en'][current]}`;
-      countEl.textContent = `${current + 1} / ${demos.length}`;
+      if (k >= MODULES) {
+        current = k;
+        titleEl.textContent = zh ? '研究助理 · 动作分析系统工作流程' : 'Research assistant · Motion analysis workflow';
+      } else {
+        current = (k + MODULES) % MODULES;
+        titleEl.textContent = `${zh ? '模块' : 'Module'} 0${current + 1} · ${demoTitles[zh ? 'zh' : 'en'][current]}`;
+        countEl.textContent = `${current + 1} / ${MODULES}`;
+      }
+      modal.querySelector('.modal-nav').hidden = current >= MODULES;
       video.poster = demos[current].poster;
       video.src = demos[current].src;
       video.play().catch(() => {});
@@ -643,9 +682,9 @@
       if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
       loadDemo(Number(btn.dataset.demoOpen) || 0);
     }));
-    prevBtn.addEventListener('click', () => loadDemo(current - 1));
-    nextBtn.addEventListener('click', () => loadDemo(current + 1));
-    video.addEventListener('ended', () => { if (current < demos.length - 1) loadDemo(current + 1); });
+    prevBtn.addEventListener('click', () => loadDemo((current - 1 + MODULES) % MODULES));
+    nextBtn.addEventListener('click', () => loadDemo((current + 1) % MODULES));
+    video.addEventListener('ended', () => { if (current < MODULES - 1) loadDemo(current + 1); });
     const closeModal = () => { video.pause(); modal.close ? modal.close() : modal.removeAttribute('open'); };
     modal.querySelector('[data-demo-close]').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
