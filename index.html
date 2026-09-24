@@ -90,6 +90,15 @@
     .project-card p { margin: 0; color: inherit; }
     .project-card .tag { display: inline-block; margin-bottom: 1.7rem; color: var(--accent); font-weight: 850; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
     .project-card.featured .tag { color: var(--accent-bright); }
+    .project-card.study { display: flex; flex-direction: column; gap: .9rem; }
+    .project-card.study .tag { margin-bottom: 0; }
+    .project-card.study h4 { margin: 0; font-size: clamp(1.3rem, 2.3vw, 1.75rem); text-wrap: balance; }
+    .project-card .question { color: var(--accent); font-weight: 650; }
+    .card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: .3rem; }
+    .card-stats div { border-top: 3px solid var(--accent-bright); padding-top: .5rem; }
+    .card-stats strong { display: block; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 1.45rem; font-weight: 500; line-height: 1.15; }
+    .card-stats span { display: block; color: var(--ink-soft); font-size: .8rem; line-height: 1.4; margin-top: .2rem; }
+    .project-card .tech { margin-top: auto; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .82rem; }
     .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 2.4rem; }
     .flow div { border-top: 1px solid rgba(255,255,255,.38); padding-top: .65rem; font-size: .85rem; color: #d5e2e7; }
     .demo-card { display: grid; grid-template-columns: 1.15fr .85fr; background: var(--ink); color: white; margin-bottom: 1.25rem; }
@@ -214,6 +223,7 @@
       .section-head { grid-template-columns: 1fr; gap: .45rem; }
       .footer-row { display: block; }
       .modules, .stats, .uses { grid-template-columns: 1fr; }
+      .card-stats { grid-template-columns: 1fr; }
       .gallery { grid-auto-rows: 190px; gap: 8px; }
       .team-card ul { font-size: 1.2rem; }
       .demo-placeholder { padding: 14px; gap: 8px; }
@@ -323,8 +333,22 @@
             </div>
           </article>
           <div class="project-grid">
-            <article class="project-card"><span class="tag">Applied Ergonomics · WCB 2026 oral</span><h4>Markerless motion capture for occupational lifting</h4><p>A concurrent-validity study of OpenCap and MediaPipe against a Vicon reference in 20 participants, across vertical, transverse and rotational walking-and-lifting tasks. Sagittal-plane tracking is promising; frontal and transverse planes remain the key limitation.</p></article>
-            <article class="project-card"><span class="tag">WCB 2026 oral</span><h4>Hybrid two-phase posture prediction</h4><p>Constrained sagittal-plane optimisation (SQP, five DOFs) combined with analytical 3D upper-limb reconstruction. Validated against Vicon in 12 participants, predicting a posture in 65–85 ms.</p></article>
+            <article class="project-card study">
+              <span class="tag">WCB 2026 oral</span>
+              <h4>Predicting how a worker will stand, before the workstation exists</h4>
+              <p class="question">Designers need to know how a person will bend, reach and hold a load while a workstation or tool is still on the drawing board.</p>
+              <p>I developed a hybrid model that predicts whole-body posture from the task alone: hand and foot positions, the load and the worker&rsquo;s body size. Instead of one large 3D search, it splits the problem in two. A fast optimisation settles the legs and trunk, then an exact geometric solution places the arm in 3D, with no trial and error.</p>
+              <div class="card-stats"><div><strong>≈85 ms</strong><span>per whole-body posture, fast enough for interactive design tools</span></div><div><strong>≤10°</strong><span>trunk and shoulder error, finer than the 10–20° bands ergonomic checklists use</span></div><div><strong>12 people</strong><span>3 tasks, validated against lab motion capture</span></div></div>
+              <p class="tech">MATLAB · constrained optimisation (SQP) · inverse kinematics · Vicon validation</p>
+            </article>
+            <article class="project-card study">
+              <span class="tag">Applied Ergonomics · WCB 2026 oral</span>
+              <h4>Can ordinary cameras replace a motion-capture lab?</h4>
+              <p class="question">Camera-based motion capture could make ergonomic assessment cheap and portable, but it had rarely been tested on real lifting.</p>
+              <p>I compared two markerless systems, a multi-phone setup (OpenCap) and a single-camera pipeline (MediaPipe), against a laboratory marker-based reference while people lifted a 10 kg box in three increasingly complex ways. Both tracked simple forward lifts reasonably well, but accuracy fell once the body twisted or walked.</p>
+              <div class="card-stats"><div><strong>20 people</strong><span>3 lifting tasks, three systems recorded at once</span></div><div><strong>+15–30%</strong><span>more error in twisting-and-walking lifts</span></div><div><strong>Screening</strong><span>clear guidance on where cameras are, and are not, good enough</span></div></div>
+              <p class="tech">Python · OpenCap and MediaPipe pipelines · Vicon · RMSE, R² and REBA agreement</p>
+            </article>
           </div>
         </div>
       </section>
@@ -443,7 +467,24 @@
             <div class="demo-actions"><button class="button" type="button" data-demo-open>▶ 观看演示</button><small>在线系统目前正在进行专家评估与迭代优化，科研合作者可申请访问。</small></div>
           </div>
         </article>
-        <div class="project-grid"><article class="project-card"><span class="tag">Applied Ergonomics · WCB 2026 口头报告</span><h4>职业搬举中的无标记动作捕捉</h4><p>以 Vicon 为参考，在 20 名受试者的垂直搬举、横向搬举和旋转行走搬举任务中评价 OpenCap 与 MediaPipe 的同期效度。矢状面表现较好，冠状面与水平面仍是主要局限。</p></article><article class="project-card"><span class="tag">WCB 2026 口头报告</span><h4>混合两阶段姿态预测</h4><p>将矢状面约束优化（SQP，5 个自由度）与三维上肢解析重建相结合。以 Vicon 在 12 名受试者中验证，单个姿态预测耗时 65–85 ms。</p></article></div></div></section>
+        <div class="project-grid">
+            <article class="project-card study">
+              <span class="tag">WCB 2026 口头报告</span>
+              <h4>在工位建成之前，预测工人会以什么姿势工作</h4>
+              <p class="question">设计师需要在工位或工具还停留在图纸阶段时，就知道人会如何弯腰、伸手和持重。</p>
+              <p>我开发了一个混合模型，只需输入任务条件——手脚位置、负重和工人体型——即可预测全身姿态。它不做一次庞大的三维搜索，而是把问题拆成两步：先用快速优化求出下肢和躯干，再用精确的几何解析方法求出三维上肢姿态，无需反复试算。</p>
+              <div class="card-stats"><div><strong>约 85 ms</strong><span>预测一个全身姿态，满足交互式设计工具的速度要求</span></div><div><strong>≤10°</strong><span>躯干与肩部误差，小于工效学评估量表 10–20° 的分级间隔</span></div><div><strong>12 人</strong><span>3 类任务，以实验室动作捕捉验证</span></div></div>
+              <p class="tech">MATLAB · 约束优化（SQP）· 逆运动学 · Vicon 验证</p>
+            </article>
+            <article class="project-card study">
+              <span class="tag">Applied Ergonomics · WCB 2026 口头报告</span>
+              <h4>普通摄像头能替代动作捕捉实验室吗？</h4>
+              <p class="question">基于摄像头的动作捕捉有望让工效学评估更便宜、更便携，但此前很少在真实搬举任务中检验。</p>
+              <p>我让受试者以三种复杂度递增的方式搬举 10 kg 箱子，同时比较多手机系统（OpenCap）和单摄像头方案（MediaPipe）与实验室标记点系统的差异。两者在简单的正面搬举中表现尚可，但身体一旦扭转或行走，准确度明显下降。</p>
+              <div class="card-stats"><div><strong>20 人</strong><span>3 类搬举任务，三套系统同步记录</span></div><div><strong>+15–30%</strong><span>扭转并行走的搬举任务误差增幅</span></div><div><strong>初步筛查</strong><span>明确摄像头方法适用与不适用的场景</span></div></div>
+              <p class="tech">Python · OpenCap 与 MediaPipe 流程 · Vicon · RMSE、R² 与 REBA 一致性</p>
+            </article>
+          </div></div></section>
 
       <section id="experience-zh"><div class="shell"><div class="section-head"><span class="number">04 / 经历</span><h3>从一段视频，到运动、负荷与风险洞察。</h3></div>
         <article class="experience-card">
