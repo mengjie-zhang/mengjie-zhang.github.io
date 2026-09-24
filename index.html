@@ -77,7 +77,7 @@
     .edu { margin-top: 2.2rem; }
     .edu-title { margin: 0 0 .9rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
     .timeline { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; }
-    .timeline li { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--line); }
+    .timeline li { display: grid; grid-template-columns: 10.5rem 1fr; gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--line); }
     .timeline .yr { color: var(--accent); font-weight: 800; font-size: .88rem; font-variant-numeric: tabular-nums; }
     .timeline strong { display: block; line-height: 1.35; }
     .timeline span:not(.yr), .timeline em { display: block; color: var(--ink-soft); font-size: .9rem; line-height: 1.45; }
@@ -109,15 +109,14 @@
     .project-card .tech { margin-top: auto; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .82rem; }
     .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 2.4rem; }
     .flow div { border-top: 1px solid rgba(255,255,255,.38); padding-top: .65rem; font-size: .85rem; color: #d5e2e7; }
-    .demo-card { display: grid; grid-template-columns: 1.15fr .85fr; background: var(--ink); color: white; margin-bottom: 1.25rem; }
+    .demo-card { display: grid; grid-template-columns: 1fr; background: var(--ink); color: white; margin-bottom: 1.25rem; }
+    .demo-card .demo-media { order: 2; aspect-ratio: 16 / 9; min-height: 0; }
+    .demo-card .demo-body { order: 1; display: grid; grid-template-columns: 1.35fr .65fr; align-items: end; gap: 1.2rem 3rem; }
     .demo-media { position: relative; display: block; width: 100%; min-height: 340px; padding: 0; border: 0; cursor: pointer; overflow: hidden; background: #0d2a44; color: white; text-align: left; }
     .demo-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
     .demo-media:hover img, .demo-media:focus-visible img { transform: scale(1.03); }
-    .demo-placeholder { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 26px; background: radial-gradient(circle at 20% 20%, rgba(98,217,203,.18), transparent 55%), linear-gradient(135deg, #0d2a44, #061a2d); }
-    .demo-placeholder .pane { border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(255,255,255,.04); position: relative; overflow: hidden; }
-    .demo-placeholder .pane.tall { grid-row: span 2; }
-    .demo-placeholder svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .demo-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(6,26,45,.75)); }
+    .demo-media::after { display: none; }
+    .demo-unused-after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(6,26,45,.75)); }
     .play { position: absolute; z-index: 1; left: 50%; top: 50%; width: 78px; height: 78px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--accent-bright); box-shadow: 0 0 0 10px rgba(98,217,203,.22); display: grid; place-items: center; transition: transform .2s ease; }
     .play::before { content: ""; margin-left: 6px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--ink); }
     .demo-media:hover .play, .demo-media:focus-visible .play { transform: translate(-50%, -50%) scale(1.07); }
@@ -128,6 +127,29 @@
     .demo-body .tag { display: inline-block; margin-bottom: 1.2rem; color: var(--accent-bright); font-weight: 850; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
     .modules { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .9rem; margin: 1.2rem 0 0; padding: 0; list-style: none; font-size: .88rem; color: #d5e2e7; }
     .modules li { border-top: 1px solid rgba(255,255,255,.25); padding-top: .45rem; }
+    .demo-note { margin-top: 1rem !important; font-size: .9rem; color: #9fb3be !important; }
+    .play.small { width: 52px; height: 52px; box-shadow: 0 0 0 7px rgba(98,217,203,.22); }
+    .play.small::before { border-width: 9px 0 9px 15px; margin-left: 4px; }
+    .featured-label { display: block; margin: 0 0 .9rem; color: var(--ink-soft); font-size: .78rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+    .subhead { display: grid; grid-template-columns: .42fr 1fr; gap: 2rem; align-items: baseline; margin: 4rem 0 1.4rem; padding-top: 1.6rem; border-top: 2px solid var(--ink); }
+    .subhead-label { color: var(--ink); font-size: .82rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+    .subhead p { margin: 0; color: var(--ink-soft); max-width: 640px; }
+    .module-demos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    .module-tile { display: flex; flex-direction: column; padding: 0; border: 1px solid var(--line); background: white; color: var(--ink); text-align: left; cursor: pointer; font: inherit; transition: border-color .2s ease, box-shadow .2s ease; }
+    .module-tile:hover, .module-tile:focus-visible { border-color: var(--accent); box-shadow: 0 10px 28px rgba(9,31,53,.12); }
+    .module-thumb { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--sky); border-bottom: 1px solid var(--line); }
+    .module-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+    .module-thumb .play { opacity: .92; }
+    .module-thumb .dur { position: absolute; right: .5rem; bottom: .5rem; padding: .12rem .45rem; border-radius: 4px; background: rgba(6,26,45,.8); color: white; font-size: .75rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .module-meta { display: flex; flex-direction: column; gap: .15rem; padding: .95rem 1rem 1.1rem; }
+    .module-no { color: var(--accent); font-size: .74rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .module-meta strong { font-size: 1.05rem; line-height: 1.3; }
+    .module-meta em { font-style: normal; color: var(--ink-soft); font-size: .84rem; font-weight: 700; }
+    .module-desc { margin-top: .35rem; color: var(--ink-soft); font-size: .86rem; line-height: 1.5; }
+    .demo-modal .modal-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .6rem 1rem; background: var(--night); font-size: .88rem; }
+    .demo-modal .modal-nav button { border: 1px solid rgba(255,255,255,.35); background: transparent; color: white; border-radius: 6px; padding: .35rem .75rem; cursor: pointer; font: inherit; font-weight: 700; }
+    .demo-modal .modal-nav button:hover, .demo-modal .modal-nav button:focus-visible { border-color: var(--accent-bright); color: var(--accent-bright); }
+    #demo-count { color: #9fb3be; font-variant-numeric: tabular-nums; }
     .demo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; }
     .demo-actions .button { background: var(--accent-bright); color: var(--ink); border-color: var(--accent-bright); cursor: pointer; font: inherit; font-weight: 760; }
     .demo-actions small { color: #9fb3be; font-size: .8rem; line-height: 1.4; max-width: 260px; }
@@ -136,7 +158,7 @@
     .demo-modal video { display: block; width: 100%; max-height: 80vh; background: #000; }
     .demo-modal .modal-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem; background: var(--night); font-size: .9rem; }
     .demo-modal .close { border: 1px solid rgba(255,255,255,.4); background: transparent; color: white; border-radius: 6px; padding: .35rem .75rem; cursor: pointer; font-weight: 750; }
-    .demo-missing { padding: 4rem 1.5rem; text-align: center; background: var(--night); color: #d5e2e7; }
+    .demo-unused { padding: 4rem 1.5rem; text-align: center; background: var(--night); color: #d5e2e7; }
     .experience-card { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(1.5rem, 5vw, 4.5rem); border-top: 1px solid var(--line); padding-top: 2rem; }
     .experience-card .role { margin: 0 0 .3rem; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.25; }
     .experience-card .org { margin: 0; color: var(--ink-soft); font-weight: 650; }
@@ -214,7 +236,9 @@
       .publication a { grid-column: 2; }
       .section-head { grid-template-columns: 70px 1fr; }
       .demo-card, .experience-card { grid-template-columns: 1fr; }
-      .demo-media { min-height: 0; aspect-ratio: 16 / 9; }
+      .module-demos { grid-template-columns: repeat(2, 1fr); }
+      .subhead { grid-template-columns: 1fr; gap: .4rem; margin-top: 3rem; }
+      .demo-card .demo-body { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       body { font-size: 16px; }
@@ -232,11 +256,11 @@
       .footer-row { display: block; }
       .modules, .stats, .uses { grid-template-columns: 1fr; }
       .card-stats { grid-template-columns: 1fr; }
+      .module-demos { grid-template-columns: 1fr; }
       .timeline li { grid-template-columns: 1fr; gap: .2rem; }
       .gallery { grid-auto-rows: 190px; gap: 8px; }
       .team-card ul { font-size: 1.2rem; }
-      .demo-placeholder { padding: 14px; gap: 8px; }
-    }
+      }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
   </style>
 </head>
@@ -268,7 +292,7 @@
             <p class="eyebrow">Biomechanics · Ergonomics · Computational tools</p>
             <h1>Mengjie<br>Zhang</h1>
             <h2>Developing and evaluating computational tools for posture prediction and video-based ergonomic assessment.</h2>
-            <p class="hero-copy">I am a doctoral candidate at the University of Auckland, nearing thesis submission. My work connects digital human modelling, markerless motion capture, occupational biomechanics and practical decision support.</p>
+            <p class="hero-copy">I am a doctoral candidate at the University of Auckland, nearing thesis submission, with the PhD expected to be conferred in 2027. My work connects digital human modelling, markerless motion capture, occupational biomechanics and practical decision support.</p>
             <div class="meta"><span>Auckland, New Zealand</span><span>Open to academic and industry opportunities</span></div>
             <div class="actions">
               <a class="button primary" href="#research">Explore my work</a>
@@ -292,7 +316,7 @@
               <div class="edu">
                 <h4 class="edu-title">Education</h4>
                 <ol class="timeline">
-                  <li><span class="yr">2023 – present</span><div><strong>PhD candidate, Biomechanics and Ergonomics</strong><span>School of Exercise, Sport and Rehabilitation Sciences, The University of Auckland</span><em>Thesis: an online video-based ergonomic assessment system for optimising design and preventing injuries in manual tasks</em></div></li>
+                  <li><span class="yr">2023 – 2027 (expected)</span><div><strong>PhD candidate, Biomechanics and Ergonomics</strong><span>School of Exercise, Sport and Rehabilitation Sciences, The University of Auckland</span><em>Thesis: an online video-based ergonomic assessment system for optimising design and preventing injuries in manual tasks</em></div></li>
                   <li><span class="yr">2020 – 2023</span><div><strong>Master&rsquo;s degree, Sports Human Science</strong><span>Beijing Sport University, China</span><em>Research focus: sports biomechanics, running-shoe stiffness and running economy</em></div></li>
                   <li><span class="yr">2016 – 2020</span><div><strong>Bachelor&rsquo;s degree, Physical Education</strong><span>Beijing Sport University, China</span></div></li>
                 </ol>
@@ -325,30 +349,24 @@
         <div class="shell">
           <div class="section-head"><span class="number">03 / Research</span><h3>Selected work across design, measurement and evaluation.</h3></div>
           <article class="demo-card">
-            <button class="demo-media" type="button" data-demo-open aria-label="Play the online ergonomic assessment system demo video">
-              <div class="demo-placeholder" aria-hidden="true"></div>
-              <img class="demo-cover" src="assets/demo-cover.jpg" alt="" hidden>
-              <span class="play"></span>
-              <span class="demo-caption">System walkthrough · Video</span>
-            </button>
             <div class="demo-body">
               <div>
                 <span class="tag">Featured doctoral project · Demo</span>
                 <h4>Online video-based ergonomic assessment system</h4>
                 <p>A web application that turns an ordinary workplace video into postural risk, manual-handling and biomechanical outputs, with an automatically generated report. Its design, development and evaluation form the core of the doctoral research.</p>
-                <ul class="modules">
-                  <li>RULA &amp; REBA postural risk</li>
-                  <li>Revised NIOSH Lifting Equation</li>
-                  <li>Static 3D inverse dynamics</li>
-                  <li>Dynamic biomechanics</li>
-                </ul>
+                <p class="demo-note">Each module is demonstrated separately below, from video input to exported report. The recordings are silent, with on-screen captions.</p>
               </div>
               <div class="demo-actions">
-                <button class="button" type="button" data-demo-open>▶ Run demo</button>
+                <button class="button" type="button" data-demo-open="0">▶ Watch the demos</button>
                 <small>The live system is currently in expert evaluation and iterative refinement. Access for research collaborators is available on request.</small>
               </div>
             </div>
           </article>
+          <div class="module-demos"><button class="module-tile" type="button" data-demo-open="0" aria-label="Watch module 1: Postural risk"><span class="module-thumb"><img src="assets/demo/module1-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">3:00</span></span><span class="module-meta"><span class="module-no">Module 01</span><strong>Postural risk</strong><em>RULA &amp; REBA</em><span class="module-desc">Frame-by-frame RULA and REBA scoring, the body regions driving each score and targeted recommendations.</span></span></button><button class="module-tile" type="button" data-demo-open="1" aria-label="Watch module 2: Manual handling"><span class="module-thumb"><img src="assets/demo/module2-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:35</span></span><span class="module-meta"><span class="module-no">Module 02</span><strong>Manual handling</strong><em>Revised NIOSH Lifting Equation</em><span class="module-desc">Recommended weight limit, lifting index and the task variables that limit it.</span></span></button><button class="module-tile" type="button" data-demo-open="2" aria-label="Watch module 3: Static biomechanics"><span class="module-thumb"><img src="assets/demo/module3-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:43</span></span><span class="module-meta"><span class="module-no">Module 03</span><strong>Static biomechanics</strong><em>3D inverse dynamics</em><span class="module-desc">Joint moments and L5/S1 compression for a selected posture.</span></span></button><button class="module-tile" type="button" data-demo-open="3" aria-label="Watch module 4: Dynamic biomechanics"><span class="module-thumb"><img src="assets/demo/module4-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:56</span></span><span class="module-meta"><span class="module-no">Module 04</span><strong>Dynamic biomechanics</strong><em>Whole-cycle analysis</em><span class="module-desc">Joint kinematics, kinetics and spinal load across a complete movement cycle.</span></span></button></div>
+          <div class="subhead">
+            <span class="subhead-label">Doctoral studies</span>
+            <p>First-author studies on posture prediction and markerless motion capture, conducted alongside the development of the assessment system.</p>
+          </div>
           <div class="project-grid">
             <article class="project-card study">
               <span class="tag">First author · WCB 2026 oral</span>
@@ -463,7 +481,7 @@
             <p class="eyebrow">生物力学 · 人体工效学 · 计算工具</p>
             <h1>Mengjie<br>Zhang</h1>
             <h2>开发并评价面向姿态预测与视频人体工效学评估的计算工具。</h2>
-            <p class="hero-copy">我是一名即将提交论文的奥克兰大学博士候选人。研究连接数字人体建模、无标记动作捕捉、职业生物力学与实用决策支持。</p>
+            <p class="hero-copy">我是奥克兰大学博士候选人，即将提交博士论文，预计 2027 年获授博士学位。研究连接数字人体建模、无标记动作捕捉、职业生物力学与实用决策支持。</p>
             <div class="meta"><span>新西兰奥克兰</span><span>寻求高校及企业岗位机会</span></div>
             <div class="actions"><a class="button primary" href="#research-zh">了解我的研究</a><a class="button" href="#contact-zh">联系我</a></div>
           </div>
@@ -471,19 +489,23 @@
         </div>
       </section>
 
-      <section id="about-zh"><div class="shell"><div class="section-head"><span class="number">01 / 简介</span><h3>让测量证据转化为可使用的工具。</h3></div><div class="about-grid"><div><p class="lead">我的博士研究覆盖人体工效学支持的两个阶段：在任务或工作站尚未建立时预测工作姿态，以及在任务实施后评估姿势与生物力学暴露。</p><p>研究融合实验生物力学、基于计算机视觉的动作分析、统计评价和应用开发。核心问题是：如何把严谨的人体运动证据转化为更易获得、可重复的安全工作决策支持？</p><div class="edu"><h4 class="edu-title">教育背景</h4><ol class="timeline"><li><span class="yr">2023 – 至今</span><div><strong>博士候选人 · 生物力学与人体工效学</strong><span>奥克兰大学运动、体育与康复科学学院</span><em>论文：面向设计优化与损伤预防的在线视频人体工效学评估系统</em></div></li><li><span class="yr">2020 – 2023</span><div><strong>运动人体科学硕士</strong><span>北京体育大学</span><em>研究方向：运动生物力学（跑鞋弯曲刚度与跑步经济性）</em></div></li><li><span class="yr">2016 – 2020</span><div><strong>体育教育学士</strong><span>北京体育大学</span></div></li></ol></div></div><dl class="fact-list"><div><dt>当前身份</dt><dd>博士候选人</dd></div><div><dt>所在机构</dt><dd>奥克兰大学</dd></div><div><dt>第一作者期刊论文</dt><dd>2 篇</dd></div><div><dt>会议口头报告</dt><dd>3 次，其中 WCB 2026 两次</dd></div><div><dt>主要领域</dt><dd>生物力学与人体工效学</dd></div></dl></div></div></section>
+      <section id="about-zh"><div class="shell"><div class="section-head"><span class="number">01 / 简介</span><h3>让测量证据转化为可使用的工具。</h3></div><div class="about-grid"><div><p class="lead">我的博士研究覆盖人体工效学支持的两个阶段：在任务或工作站尚未建立时预测工作姿态，以及在任务实施后评估姿势与生物力学暴露。</p><p>研究融合实验生物力学、基于计算机视觉的动作分析、统计评价和应用开发。核心问题是：如何把严谨的人体运动证据转化为更易获得、可重复的安全工作决策支持？</p><div class="edu"><h4 class="edu-title">教育背景</h4><ol class="timeline"><li><span class="yr">2023 – 2027（预计）</span><div><strong>博士候选人 · 生物力学与人体工效学</strong><span>奥克兰大学运动、体育与康复科学学院</span><em>论文：面向设计优化与损伤预防的在线视频人体工效学评估系统</em></div></li><li><span class="yr">2020 – 2023</span><div><strong>运动人体科学硕士</strong><span>北京体育大学</span><em>研究方向：运动生物力学（跑鞋弯曲刚度与跑步经济性）</em></div></li><li><span class="yr">2016 – 2020</span><div><strong>体育教育学士</strong><span>北京体育大学</span></div></li></ol></div></div><dl class="fact-list"><div><dt>当前身份</dt><dd>博士候选人</dd></div><div><dt>所在机构</dt><dd>奥克兰大学</dd></div><div><dt>第一作者期刊论文</dt><dd>2 篇</dd></div><div><dt>会议口头报告</dt><dd>3 次，其中 WCB 2026 两次</dd></div><div><dt>主要领域</dt><dd>生物力学与人体工效学</dd></div></dl></div></div></section>
 
-      <section class="dark"><div class="shell"><div class="section-head"><span class="number">02 / 专长</span><h3>四个相互连接的实践领域。</h3></div><div class="expertise"><article><span class="index">01</span><h4>职业生物力学</h4><p>关节运动学与动力学、逆动力学、腰椎负荷和手工搬运。</p></article><article><span class="index">02</span><h4>无标记动作捕捉</h4><p>单视角与多视角姿态估计、实验比较及效度边界。</p></article><article><span class="index">03</span><h4>数字人体建模</h4><p>姿态预测、约束优化和三维重建。</p></article><article><span class<h4>工效学评估工具</h4><p>网页评估工具、数据流程、交互可视化与自动报告。</p></article></div></div></section>
+      <section class="dark"><div class="shell"><div class="section-head"><span class="number">02 / 专长</span><h3>四个相互连接的实践领域。</h3></div><div class="expertise"><article><span class="index">01</span><h4>职业生物力学</h4><p>关节运动学与动力学、逆动力学、腰椎负荷和手工搬运。</p></article><article><span class="index">02</span><h4>无标记动作捕捉</h4><p>单视角与多视角姿态估计、实验比较及效度边界。</p></article><article><span class="index">03</span><h4>数字人体建模</h4><p>姿态预测、约束优化和三维重建。</p></article><article><span class="index">04</span><h4>工效学评估工具</h4><p>网页评估工具、数据流程、交互可视化与自动报告。</p></article></div></div></section>
 
       <section class="projects" id="research-zh"><div class="shell"><div class="section-head"><span class="number">03 / 研究</span><h3>贯穿设计、测量与评价的代表性工作。</h3></div>
         <article class="demo-card">
-          <button class="demo-media" type="button" data-demo-open aria-label="播放在线人体工效学评估系统演示视频"><div class="demo-placeholder" aria-hidden="true"></div><img class="demo-cover" src="assets/demo-cover.jpg" alt="" hidden><span class="play"></span><span class="demo-caption">系统演示 · 视频</span></button>
           <div class="demo-body">
             <div><span class="tag">博士代表项目 · 演示</span><h4>在线视频人体工效学评估系统</h4><p>把普通工作现场视频转化为姿势风险、手工搬运与生物力学评估结果，并自动生成报告的网页应用。系统的设计、开发与评价是本人博士研究的核心工作。</p>
-              <ul class="modules"><li>RULA 与 REBA 姿势风险</li><li>修订版 NIOSH 搬举方程</li><li>静态三维逆动力学</li><li>动态生物力学分析</li></ul></div>
-            <div class="demo-actions"><button class="button" type="button" data-demo-open>▶ 观看演示</button><small>在线系统目前正在进行专家评估与迭代优化，科研合作者可申请访问。</small></div>
+              <p class="demo-note">下方分别演示四个模块，从视频输入到报告导出。演示视频为无声录屏，配有屏幕字幕。</p></div>
+            <div class="demo-actions"><button class="button" type="button" data-demo-open="0">▶ 观看演示</button><small>在线系统目前正在进行专家评估与迭代优化，科研合作者可申请访问。</small></div>
           </div>
         </article>
+        <div class="module-demos"><button class="module-tile" type="button" data-demo-open="0" aria-label="观看模块 1：姿势风险"><span class="module-thumb"><img src="assets/demo/module1-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">3:00</span></span><span class="module-meta"><span class="module-no">模块 01</span><strong>姿势风险</strong><em>RULA 与 REBA</em><span class="module-desc">逐帧计算 RULA 与 REBA 评分，识别主导评分的身体部位并给出针对性建议。</span></span></button><button class="module-tile" type="button" data-demo-open="1" aria-label="观看模块 2：手工搬运"><span class="module-thumb"><img src="assets/demo/module2-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:35</span></span><span class="module-meta"><span class="module-no">模块 02</span><strong>手工搬运</strong><em>修订版 NIOSH 搬举方程</em><span class="module-desc">推荐重量限值、搬举指数及起限制作用的任务变量。</span></span></button><button class="module-tile" type="button" data-demo-open="2" aria-label="观看模块 3：静态生物力学"><span class="module-thumb"><img src="assets/demo/module3-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:43</span></span><span class="module-meta"><span class="module-no">模块 03</span><strong>静态生物力学</strong><em>三维逆动力学</em><span class="module-desc">选定姿势下的关节力矩与 L5/S1 压缩力。</span></span></button><button class="module-tile" type="button" data-demo-open="3" aria-label="观看模块 4：动态生物力学"><span class="module-thumb"><img src="assets/demo/module4-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:56</span></span><span class="module-meta"><span class="module-no">模块 04</span><strong>动态生物力学</strong><em>全周期分析</em><span class="module-desc">完整动作周期中的关节运动学、动力学与脊柱负荷。</span></span></button></div>
+        <div class="subhead">
+          <span class="subhead-label">博士阶段研究</span>
+          <p>围绕姿态预测与无标记动作捕捉开展的第一作者研究，与评估系统的开发同步进行。</p>
+        </div>
         <div class="project-grid">
             <article class="project-card study">
               <span class="tag">第一作者 · WCB 2026 口头报告</span>
@@ -559,11 +581,13 @@
   </main>
 
   <dialog class="demo-modal" id="demo-modal" aria-labelledby="demo-title">
-    <div class="modal-bar"><span id="demo-title" data-en="Online ergonomic assessment system · Demo" data-zh="在线人体工效学评估系统 · 演示">Online ergonomic assessment system · Demo</span><button class="close" type="button" data-demo-close data-en="Close" data-zh="关闭">Close</button></div>
-    <video id="demo-video" controls playsinline preload="none" poster="assets/demo-cover.jpg">
-      <source src="assets/ergo-demo.mp4" type="video/mp4">
-    </video>
-    <div class="demo-missing" id="demo-missing" hidden data-en="The demo video is being prepared and will be available here shortly." data-zh="演示视频正在准备中，稍后将在此处上线。">The demo video is being prepared and will be available here shortly.</div>
+    <div class="modal-bar"><span id="demo-title">Module 01 · Postural risk</span><button class="close" type="button" data-demo-close data-en="Close" data-zh="关闭">Close</button></div>
+    <video id="demo-video" controls playsinline preload="metadata"></video>
+    <div class="modal-nav">
+      <button type="button" id="demo-prev" data-en="← Previous module" data-zh="← 上一个模块">← Previous module</button>
+      <span id="demo-count">1 / 4</span>
+      <button type="button" id="demo-next" data-en="Next module →" data-zh="下一个模块 →">Next module →</button>
+    </div>
   </dialog>
 
   <footer><div class="shell footer-row"><span>© 2026 Mengjie Zhang</span><span>Evidence-led biomechanics and ergonomics</span></div></footer>
@@ -594,31 +618,38 @@
     try { savedLang = localStorage.getItem('profile-language') || 'en'; } catch (e) {}
     setLanguage(savedLang);
 
-    // Demo: the cover and video appear automatically once assets/demo-cover.jpg and assets/ergo-demo.mp4 exist.
-    const placeholderSvg = `
-      <div class="pane tall"><svg viewBox="0 0 100 160" preserveAspectRatio="xMidYMid meet"><g stroke="#62d9cb" stroke-width="2.2" fill="none" stroke-linecap="round"><circle cx="50" cy="22" r="8"/><path d="M50 30 L48 70 M48 70 L36 104 L40 140 M48 70 L60 104 L58 140 M49 40 L30 62 L40 78 M49 40 L68 60 L60 78"/></g><g fill="#fff"><circle cx="50" cy="30" r="2.4"/><circle cx="48" cy="70" r="2.4"/><circle cx="36" cy="104" r="2.4"/><circle cx="60" cy="104" r="2.4"/><circle cx="30" cy="62" r="2.4"/><circle cx="68" cy="60" r="2.4"/></g><rect x="34" y="74" width="32" height="14" rx="2" fill="none" stroke="#fff" stroke-opacity=".45" stroke-dasharray="3 2"/></svg></div>
-      <div class="pane"><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M0 45 C15 40 22 12 38 14 S60 48 78 40 S100 10 120 18" stroke="#62d9cb" stroke-width="2" fill="none"/><path d="M0 50 C18 48 30 30 45 32 S75 52 90 44 S110 30 120 34" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/></svg></div>
-      <div class="pane"><svg viewBox="0 0 120 60" preserveAspectRatio="none"><rect x="12" y="34" width="14" height="22" fill="#62d9cb" fill-opacity=".85"/><rect x="36" y="22" width="14" height="34" fill="#62d9cb" fill-opacity=".6"/><rect x="60" y="12" width="14" height="44" fill="#f2b36b" fill-opacity=".8"/><rect x="84" y="28" width="14" height="28" fill="#62d9cb" fill-opacity=".6"/></svg></div>`;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.gallery video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
     }
-    document.querySelectorAll('.demo-placeholder').forEach(el => el.innerHTML = placeholderSvg);
-    document.querySelectorAll('.demo-cover').forEach(img => {
-      const show = () => { img.hidden = false; img.previousElementSibling.hidden = true; };
-      if (img.complete && img.naturalWidth) show(); else img.addEventListener('load', show);
-    });
+    const demos = [1, 2, 3, 4].map(n => ({ src: `assets/demo/module${n}.mp4`, poster: `assets/demo/module${n}-thumb.jpg` }));
+    const demoTitles = { en: ['Postural risk', 'Manual handling', 'Static biomechanics', 'Dynamic biomechanics'], zh: ['姿势风险', '手工搬运', '静态生物力学', '动态生物力学'] };
     const modal = document.getElementById('demo-modal');
     const video = document.getElementById('demo-video');
-    const missing = document.getElementById('demo-missing');
-    video.querySelector('source').addEventListener('error', () => { video.hidden = true; missing.hidden = false; });
+    const titleEl = document.getElementById('demo-title');
+    const countEl = document.getElementById('demo-count');
+    const prevBtn = document.getElementById('demo-prev');
+    const nextBtn = document.getElementById('demo-next');
+    let current = 0;
+    function loadDemo(k) {
+      current = (k + demos.length) % demos.length;
+      const zh = document.documentElement.lang === 'zh-CN';
+      titleEl.textContent = `${zh ? '模块' : 'Module'} 0${current + 1} · ${demoTitles[zh ? 'zh' : 'en'][current]}`;
+      countEl.textContent = `${current + 1} / ${demos.length}`;
+      video.poster = demos[current].poster;
+      video.src = demos[current].src;
+      video.play().catch(() => {});
+    }
     document.querySelectorAll('[data-demo-open]').forEach(btn => btn.addEventListener('click', () => {
       if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
-      if (!video.hidden) video.play().catch(() => {});
+      loadDemo(Number(btn.dataset.demoOpen) || 0);
     }));
+    prevBtn.addEventListener('click', () => loadDemo(current - 1));
+    nextBtn.addEventListener('click', () => loadDemo(current + 1));
+    video.addEventListener('ended', () => { if (current < demos.length - 1) loadDemo(current + 1); });
     const closeModal = () => { video.pause(); modal.close ? modal.close() : modal.removeAttribute('open'); };
     modal.querySelector('[data-demo-close]').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    modal.addEventListener('close', () => video.pause());
+    modal.addEventListener('close', () => { video.pause(); video.removeAttribute('src'); video.load(); });
   </script>
 </body>
 </html>
