@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mengjie Zhang | Biomechanics and Ergonomics</title>
+  <meta name="description" content="Bilingual profile of Mengjie Zhang, a doctoral candidate working across biomechanics, ergonomics, markerless motion capture and digital human modelling.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091f35'/%3E%3Cpath d='M15 46V18h8l9 15 9-15h8v28h-8V31l-9 14-9-14v15z' fill='%236ee7d8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #091f35;
+      --ink-soft: #35495c;
+      --accent: #0b7f87;
+      --accent-bright: #62d9cb;
+      --sky: #eaf7f8;
+      --line: #cbd9dd;
+      --paper: #ffffff;
+      --night: #061a2d;
+      --max: 1180px;
+      --shadow: 0 22px 70px rgba(9, 31, 53, .14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip { position: absolute; left: -9999px; top: 0; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 10; background: white; padding: .7rem 1rem; }
+    .shell { width: min(calc(100% - 2.2rem), var(--max)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+      background: rgba(255,255,255,.94); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(203,217,221,.8);
+    }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { font-weight: 780; letter-spacing: -.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.35rem; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-size: .92rem; font-weight: 650; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+    .language { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: white; }
+    .language button { border: 0; background: transparent; padding: .42rem .68rem; border-radius: 999px; cursor: pointer; color: var(--ink-soft); font-weight: 750; }
+    .language button[aria-pressed="true"] { background: var(--ink); color: white; }
+    .hero { overflow: hidden; background: linear-gradient(135deg, #f7fbfc 0%, #eefafa 56%, #d7f3f1 100%); }
+    .hero-grid { min-height: 690px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: clamp(2rem, 5vw, 6rem); padding-block: 5.8rem 4.8rem; }
+    .eyebrow { margin: 0 0 1rem; color: var(--accent); font-weight: 800; letter-spacing: .09em; text-transform: uppercase; font-size: .78rem; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: clamp(3.2rem, 8vw, 6.8rem); line-height: .92; letter-spacing: -.055em; font-weight: 500; }
+    .hero h2 { margin: 1.35rem 0 0; font-size: clamp(1.28rem, 2.1vw, 1.75rem); line-height: 1.3; font-weight: 650; max-width: 760px; }
+    .hero-copy { margin: 1.35rem 0 0; max-width: 680px; color: var(--ink-soft); font-size: 1.08rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: .55rem 1.2rem; margin: 1.6rem 0 0; color: var(--ink-soft); font-weight: 650; font-size: .92rem; }
+    .meta span::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: .55rem; border-radius: 50%; background: var(--accent-bright); vertical-align: .08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .7rem 1rem; border: 1px solid var(--ink); border-radius: 6px; text-decoration: none; font-weight: 760; }
+    .button.primary { background: var(--ink); color: white; }
+    .button:hover, .button:focus-visible { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(9,31,53,.13); }
+    .portrait-wrap { position: relative; align-self: end; }
+    .portrait-wrap::before { content: ""; position: absolute; inset: -7% 7% 7% -9%; border: 1px solid rgba(9,31,53,.18); border-radius: 52% 48% 8px 8px; }
+    .portrait { position: relative; width: min(100%, 455px); margin-inline: auto; aspect-ratio: .83; object-fit: cover; object-position: 50% 25%; border-radius: 52% 48% 8px 8px; box-shadow: var(--shadow); }
+    .vertical-note { position: absolute; right: -2rem; bottom: 4.8rem; writing-mode: vertical-rl; color: var(--accent); text-transform: uppercase; letter-spacing: .15em; font-size: .7rem; font-weight: 850; }
+    section { padding-block: clamp(4.4rem, 8vw, 7rem); }
+    .section-head { display: grid; grid-template-columns: .42fr 1fr; gap: 2rem; align-items: end; margin-bottom: 2.4rem; }
+    .section-head .number { color: var(--accent); font-weight: 850; letter-spacing: .08em; }
+    h3 { margin: 0; max-width: 820px; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.05; font-weight: 500; letter-spacing: -.035em; }
+    .lead { font-size: clamp(1.15rem, 2.1vw, 1.45rem); line-height: 1.55; max-width: 900px; }
+    .about-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(2rem, 7vw, 7rem); }
+    .fact-list { margin: 0; display: grid; gap: 1rem; }
+    .fact-list div { border-top: 1px solid var(--line); padding-top: .8rem; }
+    .fact-list dt { color: var(--ink-soft); font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
+    .fact-list dd { margin: .2rem 0 0; font-weight: 720; }
+    .dark { background: var(--night); color: white; }
+    .dark .section-head .number, .dark .eyebrow { color: var(--accent-bright); }
+    .dark p { color: #d5e2e7; }
+    .expertise { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.2); }
+    .expertise article { min-height: 270px; padding: 1.55rem; background: var(--night); }
+    .expertise .index { color: var(--accent-bright); font-size: .78rem; font-weight: 850; }
+    .expertise h4 { margin: 4.4rem 0 .55rem; font-size: 1.2rem; line-height: 1.25; }
+    .expertise p { margin: 0; font-size: .93rem; }
+    .projects { background: #f6f9fa; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .project-card { background: white; border: 1px solid var(--line); padding: clamp(1.35rem, 3vw, 2.4rem); }
+    .project-card.featured { grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 535px; background: var(--ink); color: white; border: 0; }
+    .project-card h4 { margin: 0 0 .8rem; font-size: clamp(1.35rem, 2.7vw, 2.15rem); line-height: 1.2; }
+    .project-card p { margin: 0; color: inherit; }
+    .project-card .tag { display: inline-block; margin-bottom: 1.7rem; color: var(--accent); font-weight: 850; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
+    .project-card.featured .tag { color: var(--accent-bright); }
+    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 2.4rem; }
+    .flow div { border-top: 1px solid rgba(255,255,255,.38); padding-top: .65rem; font-size: .85rem; color: #d5e2e7; }
+    .demo-card { display: grid; grid-template-columns: 1.15fr .85fr; background: var(--ink); color: white; margin-bottom: 1.25rem; }
+    .demo-media { position: relative; display: block; width: 100%; min-height: 340px; padding: 0; border: 0; cursor: pointer; overflow: hidden; background: #0d2a44; color: white; text-align: left; }
+    .demo-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .demo-media:hover img, .demo-media:focus-visible img { transform: scale(1.03); }
+    .demo-placeholder { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 26px; background: radial-gradient(circle at 20% 20%, rgba(98,217,203,.18), transparent 55%), linear-gradient(135deg, #0d2a44, #061a2d); }
+    .demo-placeholder .pane { border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(255,255,255,.04); position: relative; overflow: hidden; }
+    .demo-placeholder .pane.tall { grid-row: span 2; }
+    .demo-placeholder svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .demo-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(6,26,45,.75)); }
+    .play { position: absolute; z-index: 1; left: 50%; top: 50%; width: 78px; height: 78px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--accent-bright); box-shadow: 0 0 0 10px rgba(98,217,203,.22); display: grid; place-items: center; transition: transform .2s ease; }
+    .play::before { content: ""; margin-left: 6px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--ink); }
+    .demo-media:hover .play, .demo-media:focus-visible .play { transform: translate(-50%, -50%) scale(1.07); }
+    .demo-caption { position: absolute; z-index: 1; left: 1.2rem; bottom: 1rem; font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-bright); }
+    .demo-body { padding: clamp(1.35rem, 3vw, 2.4rem); display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
+    .demo-body h4 { margin: 0 0 .8rem; font-size: clamp(1.35rem, 2.7vw, 2.15rem); line-height: 1.2; }
+    .demo-body p { margin: 0; color: #d5e2e7; }
+    .demo-body .tag { display: inline-block; margin-bottom: 1.2rem; color: var(--accent-bright); font-weight: 850; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
+    .modules { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .9rem; margin: 1.2rem 0 0; padding: 0; list-style: none; font-size: .88rem; color: #d5e2e7; }
+    .modules li { border-top: 1px solid rgba(255,255,255,.25); padding-top: .45rem; }
+    .demo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; }
+    .demo-actions .button { background: var(--accent-bright); color: var(--ink); border-color: var(--accent-bright); cursor: pointer; font: inherit; font-weight: 760; }
+    .demo-actions small { color: #9fb3be; font-size: .8rem; line-height: 1.4; max-width: 260px; }
+    .demo-modal { width: min(1100px, calc(100% - 2rem)); padding: 0; border: 0; background: #000; color: white; box-shadow: var(--shadow); }
+    .demo-modal::backdrop { background: rgba(6,26,45,.82); }
+    .demo-modal video { display: block; width: 100%; max-height: 80vh; background: #000; }
+    .demo-modal .modal-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem; background: var(--night); font-size: .9rem; }
+    .demo-modal .close { border: 1px solid rgba(255,255,255,.4); background: transparent; color: white; border-radius: 6px; padding: .35rem .75rem; cursor: pointer; font-weight: 750; }
+    .demo-missing { padding: 4rem 1.5rem; text-align: center; background: var(--night); color: #d5e2e7; }
+    .experience-card { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(1.5rem, 5vw, 4.5rem); border-top: 1px solid var(--line); padding-top: 2rem; }
+    .experience-card .role { margin: 0 0 .3rem; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.25; }
+    .experience-card .org { margin: 0; color: var(--ink-soft); font-weight: 650; }
+    .experience-card .org-sub { margin: .2rem 0 0; color: var(--ink-soft); font-size: .9rem; }
+    .pipeline { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+    .pipeline li { padding: .38rem .7rem; border: 1px solid var(--line); border-radius: 999px; font-size: .82rem; font-weight: 700; color: var(--ink-soft); background: white; }
+    .pipeline li:not(:last-child)::after { content: "→"; margin-left: .6rem; color: var(--accent); }
+    .bullets { margin: 0; padding-left: 1.1rem; display: grid; gap: .7rem; }
+    .bullets li::marker { color: var(--accent); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.6rem; }
+    .stats div { border-top: 3px solid var(--accent-bright); padding-top: .6rem; }
+    .stats strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; line-height: 1.1; }
+    .stats span { color: var(--ink-soft); font-size: .84rem; }
+    .exp-lead { margin: 0; font-size: 1.12rem; line-height: 1.6; }
+    .uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .uses div { border-top: 3px solid var(--accent-bright); padding-top: .7rem; }
+    .uses h5 { margin: 0 0 .3rem; font-size: 1rem; }
+    .uses p { margin: 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.5; }
+    .exp-tech { margin: 1.6rem 0 0; padding: 1rem 1.1rem; background: var(--sky); color: var(--ink-soft); font-size: .93rem; }
+    .exp-tech strong { color: var(--ink); }
+    .fine-print { margin-top: 1rem; color: var(--ink-soft); font-size: .8rem; }
+    .pub-group { margin: 2.2rem 0 .4rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
+    .pub-group:first-child { margin-top: 0; }
+    .publication .badge { display: inline-block; margin-left: .35rem; padding: .05rem .45rem; border-radius: 4px; background: var(--sky); color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .04em; vertical-align: .1rem; }
+    .publication-list { display: grid; gap: 1rem; }
+    .publication { display: grid; grid-template-columns: 92px 1fr auto; gap: 1.25rem; align-items: start; padding: 1.15rem 0; border-top: 1px solid var(--line); }
+    .publication time { color: var(--accent); font-weight: 850; }
+    .publication strong { display: block; line-height: 1.35; }
+    .publication span { color: var(--ink-soft); font-size: .92rem; }
+    .publication a { color: var(--accent); font-weight: 780; text-decoration-thickness: 1px; text-underline-offset: 3px; white-space: nowrap; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 5rem; }
+    .skill-block h4 { margin: 0 0 .65rem; font-size: 1rem; text-transform: uppercase; letter-spacing: .07em; }
+    .skill-block p { margin: 0; color: var(--ink-soft); }
+    .dark .skill-block p { color: #c3d3da; }
+    .life { background: linear-gradient(180deg, var(--sky), #ffffff 70%); }
+    .life-head { display: grid; grid-template-columns: .42fr 1fr; gap: 2rem; align-items: end; margin-bottom: 1.6rem; }
+    .life-head .number { color: var(--accent); font-weight: 850; letter-spacing: .08em; }
+    .life-intro { display: grid; grid-template-columns: .42fr 1fr; gap: 2rem; margin-bottom: 2.2rem; }
+    .life-intro .lead { margin: 0; }
+    .activities { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+    .activities li { padding: .36rem .75rem; border-radius: 999px; background: white; border: 1px solid var(--line); font-size: .85rem; font-weight: 720; color: var(--ink); }
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 360px 320px; gap: 12px; }
+    .tile { position: relative; margin: 0; overflow: hidden; border-radius: 4px; background: var(--ink); }
+    .tile img, .tile video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tile.wide { grid-column: span 2; }
+    .tile figcaption { position: absolute; left: .7rem; bottom: .7rem; padding: .28rem .6rem; border-radius: 999px; background: rgba(6,26,45,.72); color: white; font-size: .78rem; font-weight: 750; letter-spacing: .02em; backdrop-filter: blur(6px); }
+    .tile .motion { position: absolute; top: .7rem; right: .7rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-bright); box-shadow: 0 0 0 4px rgba(98,217,203,.3); }
+    .team-card { display: flex; flex-direction: column; justify-content: space-between; padding: 1.3rem; background: var(--ink); color: white; }
+    .team-card .eyebrow { color: var(--accent-bright); margin: 0; }
+    .team-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 1.45rem; line-height: 1.2; }
+    .team-card p { margin: 0; color: #c3d3da; font-size: .88rem; line-height: 1.5; }
+    .download-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .85rem; margin-top: 1.3rem; }
+    .download-grid a { display: block; padding: 1rem; border: 1px solid var(--line); text-decoration: none; font-weight: 780; background: white; }
+    .download-grid a span { display: block; color: var(--ink-soft); font-size: .84rem; font-weight: 550; }
+    .download-grid a:hover, .download-grid a:focus-visible { border-color: var(--accent); color: var(--accent); }
+    .contact { background: var(--ink); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+    .contact h3 { max-width: 800px; }
+    .contact p { color: #d5e2e7; max-width: 700px; }
+    .contact .button { user-select: text; background: var(--accent-bright); color: var(--ink); border-color: var(--accent-bright); }
+    footer { background: var(--ink); color: #9fb3be; border-top: 1px solid rgba(255,255,255,.14); padding: 1.3rem 0; font-size: .84rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 1rem; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
+    @media (max-width: 900px) {
+      .nav-links a:not(.brand) { display: none; }
+      .hero-grid, .about-grid, .project-grid, .contact-grid, .life-head, .life-intro { grid-template-columns: 1fr; }
+      .life-head, .life-intro { gap: .6rem; }
+      .gallery { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: 240px; }
+      .hero-grid { padding-top: 4.2rem; min-height: 0; }
+      .portrait-wrap { max-width: 550px; }
+      .expertise { grid-template-columns: repeat(2, 1fr); }
+      .project-card.featured { min-height: 430px; }
+      .publication { grid-template-columns: 65px 1fr; }
+      .publication a { grid-column: 2; }
+      .section-head { grid-template-columns: 70px 1fr; }
+      .demo-card, .experience-card { grid-template-columns: 1fr; }
+      .demo-media { min-height: 0; aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .shell { width: min(calc(100% - 1.25rem), var(--max)); }
+      h1 { font-size: 3.25rem; }
+      .hero-grid { padding-block: 3.4rem 3.8rem; }
+      .vertical-note { display: none; }
+      .actions, .actions .button { width: 100%; }
+      .expertise, .skills-grid, .download-grid { grid-template-columns: 1fr; }
+      .expertise article { min-height: 230px; }
+      .flow { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 1fr; gap: .3rem; }
+      .publication a { grid-column: 1; }
+      .section-head { grid-template-columns: 1fr; gap: .45rem; }
+      .footer-row { display: block; }
+      .modules, .stats, .uses { grid-template-columns: 1fr; }
+      .gallery { grid-auto-rows: 190px; gap: 8px; }
+      .team-card ul { font-size: 1.2rem; }
+      .demo-placeholder { padding: 14px; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#top">Mengjie Zhang</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about" data-en="About" data-zh="简介">About</a>
+        <a href="#research" data-en="Research" data-zh="研究">Research</a>
+        <a href="#experience" data-en="Experience" data-zh="经历">Experience</a>
+        <a href="#publications" data-en="Publications" data-zh="成果">Publications</a>
+        <a href="#life" data-en="Beyond research" data-zh="研究之外">Beyond research</a>
+        <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
+        <div class="language" aria-label="Language selection">
+          <button id="lang-en" type="button" aria-pressed="true">EN</button>
+          <button id="lang-zh" type="button" aria-pressed="false">中文</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div id="en-content">
+      <section class="hero" id="top">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">Biomechanics · Ergonomics · Research software</p>
+            <h1>Mengjie<br>Zhang</h1>
+            <h2>I develop and evaluate computational tools for posture prediction and video-based ergonomic assessment.</h2>
+            <p class="hero-copy">I am a doctoral candidate at the University of Auckland, nearing thesis submission. My work connects digital human modelling, markerless motion capture, occupational biomechanics and practical decision support.</p>
+            <div class="meta"><span>Auckland, New Zealand</span><span>Open to academic and industry opportunities</span></div>
+            <div class="actions">
+              <a class="button primary" href="#research">Explore my work</a>
+              <a class="button" href="#contact">Get in touch</a>
+            </div>
+          </div>
+          <div class="portrait-wrap">
+            <img class="portrait" src="assets/mengjie-portrait.jpg" alt="Portrait of Mengjie Zhang">
+            <div class="vertical-note" aria-hidden="true">Evidence → Systems → Practice</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="shell">
+          <div class="section-head"><span class="number">01 / About</span><h3>Research that moves from measurement to usable tools.</h3></div>
+          <div class="about-grid">
+            <div>
+              <p class="lead">My doctoral research addresses two phases of ergonomic support: predicting working posture before a task or workstation exists, and assessing postural and biomechanical exposure once it does.</p>
+              <p>I work across experimental biomechanics, computer-vision-based motion analysis, statistical evaluation and application development. The unifying question is practical: how can rigorous movement evidence become accessible, repeatable support for safer work?</p>
+            </div>
+            <dl class="fact-list">
+              <div><dt>Current role</dt><dd>Doctoral Candidate</dd></div>
+              <div><dt>Institution</dt><dd>The University of Auckland</dd></div>
+              <div><dt>First-author journal articles</dt><dd>2</dd></div>
+              <div><dt>Conference oral presentations</dt><dd>3, including 2 at WCB 2026</dd></div>
+              <div><dt>Primary domains</dt><dd>Biomechanics and Ergonomics</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark">
+        <div class="shell">
+          <div class="section-head"><span class="number">02 / Expertise</span><h3>Four connected areas of practice.</h3></div>
+          <div class="expertise">
+            <article><span class="index">01</span><h4>Occupational biomechanics</h4><p>Joint kinematics and kinetics, inverse dynamics, lumbar loading and manual handling.</p></article>
+            <article><span class="index">02</span><h4>Markerless motion capture</h4><p>Single- and multi-view pose estimation, experimental comparison and validity boundaries.</p></article>
+            <article><span class="index">03</span><h4>Digital human modelling</h4><p>Posture prediction, constrained optimisation and three-dimensional reconstruction.</p></article>
+            <article><span class="index">04</span><h4>Research software</h4><p>Python applications, data pipelines, interactive visualisation and automated reporting.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="research">
+        <div class="shell">
+          <div class="section-head"><span class="number">03 / Research</span><h3>Selected work across design, measurement and evaluation.</h3></div>
+          <article class="demo-card">
+            <button class="demo-media" type="button" data-demo-open aria-label="Play the online ergonomic assessment system demo video">
+              <div class="demo-placeholder" aria-hidden="true"></div>
+              <img class="demo-cover" src="assets/demo-cover.jpg" alt="" hidden>
+              <span class="play"></span>
+              <span class="demo-caption">System walkthrough · Video</span>
+            </button>
+            <div class="demo-body">
+              <div>
+                <span class="tag">Featured doctoral project · Demo</span>
+                <h4>Online video-based ergonomic assessment system</h4>
+                <p>A web application that turns an ordinary workplace video into postural risk, manual-handling and biomechanical outputs, with an automatically generated report. I designed, built and evaluated the system end to end.</p>
+                <ul class="modules">
+                  <li>RULA &amp; REBA postural risk</li>
+                  <li>Revised NIOSH Lifting Equation</li>
+                  <li>Static 3D inverse dynamics</li>
+                  <li>Dynamic biomechanics</li>
+                </ul>
+              </div>
+              <div class="demo-actions">
+                <button class="button" type="button" data-demo-open>▶ Run demo</button>
+                <small>The live system is currently in expert evaluation and iterative refinement. Access for research collaborators is available on request.</small>
+              </div>
+            </div>
+          </article>
+          <div class="project-grid">
+            <article class="project-card"><span class="tag">Applied Ergonomics · WCB 2026 oral</span><h4>Markerless motion capture for occupational lifting</h4><p>A concurrent-validity study of OpenCap and MediaPipe against a Vicon reference in 20 participants, across vertical, transverse and rotational walking-and-lifting tasks. Sagittal-plane tracking is promising; frontal and transverse planes remain the key limitation.</p></article>
+            <article class="project-card"><span class="tag">WCB 2026 oral</span><h4>Hybrid two-phase posture prediction</h4><p>Constrained sagittal-plane optimisation (SQP, five DOFs) combined with analytical 3D upper-limb reconstruction. Validated against Vicon in 12 participants, predicting a posture in 65–85 ms.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="shell">
+          <div class="section-head"><span class="number">04 / Experience</span><h3>From a single video to movement, load and risk insight.</h3></div>
+          <article class="experience-card">
+            <div>
+              <p class="role">Research Assistant</p>
+              <p class="org">The University of Auckland · Jun 2026 – present</p>
+              <p class="org-sub">PI: Assoc. Prof. Yanxin Zhang · Video-based motion analysis system</p>
+              <ul class="pipeline" aria-label="How the system works">
+                <li>One camera</li><li>3D full-body motion</li><li>Forces and joint loads</li><li>Movement and lumbar-load reports</li>
+              </ul>
+            </div>
+            <div>
+              <p class="exp-lead">As the lead developer, I built a markerless system for human movement analysis from an ordinary single-camera video, with no markers, force plates or laboratory set-up.</p>
+              <div class="uses">
+                <div><h5>Gait analysis</h5><p>Walking kinematics, joint loading and muscle-level estimates for human movement analysis.</p></div>
+                <div><h5>Manual-handling risk</h5><p>Lifting and handling tasks, including lumbar loading estimation, for workplace injury prevention.</p></div>
+                <div><h5>Rehabilitation assessment</h5><p>Objective movement measures to support preliminary screening and progress tracking in rehabilitation.</p></div>
+              </div>
+              <p class="exp-tech"><strong>My technical contribution:</strong> adapting the markerless pose model, including added neck degrees of freedom; fine-tuning a deep-learning model that predicts ground reaction forces from video-derived motion, which cut force-prediction error by about half in lifting tasks; and linking it with musculoskeletal simulation and a web interface.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="shell">
+          <div class="section-head"><span class="number">05 / Publications</span><h3>Peer-reviewed articles and conference presentations.</h3></div>
+          <div class="publication-list">
+            <h4 class="pub-group">Journal articles</h4>
+            <article class="publication"><time>2027</time><div><strong>Concurrent validity of markerless motion capture for occupational lifting: Kinematics and ergonomic risk assessment</strong><span>Applied Ergonomics 138, 104866 · First author</span></div><a href="https://doi.org/10.1016/j.apergo.2026.104866">DOI</a></article>
+            <article class="publication"><time>2025</time><div><strong>Posture prediction models in digital human modeling for ergonomic design: A systematic review</strong><span>Medical Engineering &amp; Physics 143, 104391 · First author</span></div><a href="https://doi.org/10.1016/j.medengphy.2025.104391">DOI</a></article>
+            <h4 class="pub-group">Conference presentations</h4>
+            <article class="publication"><time>2026</time><div><strong>Concurrent validity of markerless motion capture for assessing manual lifting kinematics <span class="badge">Oral</span></strong><span>10th World Congress of Biomechanics (WCB 2026), Vancouver, Canada · Session OA174 Occupational Biomechanics Technology · 15 July 2026 · Presenting author</span></div><span>Vancouver</span></article>
+            <article class="publication"><time>2026</time><div><strong>A hybrid two-phase framework for posture prediction of manual material handling tasks <span class="badge">Oral</span></strong><span>10th World Congress of Biomechanics (WCB 2026), Vancouver, Canada · Session OA174 Occupational Biomechanics Technology · 15 July 2026 · Presenting author</span></div><span>Vancouver</span></article>
+            <article class="publication"><time>2026</time><div><strong>From clipboard to camera: An online video-based ergonomic assessment system for New Zealand workplaces <span class="badge">Oral</span></strong><span>HFESNZ 40th Conference · 16 September 2026 · Presenting author</span></div><span>Auckland</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark">
+        <div class="shell">
+          <div class="section-head"><span class="number">06 / Methods</span><h3>A cross-disciplinary technical toolkit.</h3></div>
+          <div class="skills-grid">
+            <div class="skill-block"><h4>Programming and data</h4><p>Python, MATLAB, pandas, NumPy, SciPy, SPSS and Excel.</p></div>
+            <div class="skill-block"><h4>Computer vision and deep learning</h4><p>MediaPipe, OpenCap, OpenCV, PyTorch, LoRA fine-tuning and cross-validated model evaluation.</p></div>
+            <div class="skill-block"><h4>Movement analysis</h4><p>Vicon and Cortex workflows, Visual3D, OpenSim, markerless motion capture and inverse dynamics.</p></div>
+            <div class="skill-block"><h4>Applications and visualisation</h4><p>Streamlit, Plotly and ReportLab for interactive tools and automated reports.</p></div>
+            <div class="skill-block"><h4>Research practice</h4><p>Repeated-measures studies, concurrent validity, agreement analysis, systematic review and scientific communication.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="life" id="life">
+        <div class="shell">
+          <div class="life-head"><span class="number">07 / Beyond research</span><h3>Strength, trails, water and team sport.</h3></div>
+          <div class="life-intro">
+            <div></div>
+            <div>
+              <p class="lead">Sport keeps me curious about how bodies move and adapt. Most weeks include strength training and a swim; weekends are for trails, the climbing wall and team games. Feeling load, fatigue and technique first-hand keeps my biomechanics grounded.</p>
+              <ul class="activities" aria-label="Activities"><li>Hiking</li><li>Strength training</li><li>Swimming</li><li>Bouldering</li><li>Badminton</li><li>Contact rugby</li><li>Ultimate frisbee</li></ul>
+            </div>
+          </div>
+          <div class="gallery">
+            <figure class="tile wide"><img src="assets/life/hiking.jpg" alt="Mengjie hiking on a volcanic ridge" loading="lazy" style="object-position: 50% 45%"><figcaption>Hiking</figcaption></figure>
+            <figure class="tile"><img src="assets/life/gym.jpg" alt="Strength training at the gym" loading="lazy" style="object-position: 50% 30%"><figcaption>Strength training</figcaption></figure>
+            <figure class="tile"><img src="assets/life/bouldering-2.jpg" alt="Mengjie bouldering on an indoor wall" loading="lazy" style="object-position: 50% 40%"><figcaption>Bouldering</figcaption></figure>
+            <figure class="tile wide"><video src="assets/life/swimming.mp4" poster="assets/life/swimming-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Swimming freestyle in an indoor pool"></video><span class="motion" aria-hidden="true"></span><figcaption>Swimming</figcaption></figure>
+            <div class="tile team-card">
+              <p class="eyebrow">Team sport</p>
+              <ul><li>Badminton</li><li>Ultimate frisbee</li><li>Contact rugby</li></ul>
+              <p>Fast decisions, shared effort and a lot of running.</p>
+            </div>
+            <figure class="tile"><img src="assets/life/rugby.jpg" alt="Mengjie catching a rugby ball during a beach session" loading="lazy" style="object-position: 40% 62%"><figcaption>Contact rugby</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="shell contact-grid">
+          <div><p class="eyebrow">Contact</p><h3>Interested in research, applied R&amp;D or ergonomics work?</h3><p>I welcome conversations about academic, postdoctoral and industry opportunities where biomechanics, human factors and computational tools meet.</p></div>
+          <a class="button" href="mailto:mzha967@aucklanduni.ac.nz">mzha967@aucklanduni.ac.nz</a>
+        </div>
+      </section>
+    </div>
+
+    <div id="zh-content" lang="zh-CN" hidden>
+      <section class="hero" id="top-zh">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">生物力学 · 人体工效学 · 科研软件</p>
+            <h1>Mengjie<br>Zhang</h1>
+            <h2>开发并评价面向姿态预测与视频人体工效学评估的计算工具。</h2>
+            <p class="hero-copy">我是一名即将提交论文的奥克兰大学博士候选人。研究连接数字人体建模、无标记动作捕捉、职业生物力学与实用决策支持。</p>
+            <div class="meta"><span>新西兰奥克兰</span><span>寻求高校及企业岗位机会</span></div>
+            <div class="actions"><a class="button primary" href="#research-zh">了解我的研究</a><a class="button" href="#contact-zh">联系我</a></div>
+          </div>
+          <div class="portrait-wrap"><img class="portrait" src="assets/mengjie-portrait.jpg" alt="Mengjie Zhang 肖像"><div class="vertical-note" aria-hidden="true">证据 → 系统 → 实践</div></div>
+        </div>
+      </section>
+
+      <section id="about-zh"><div class="shell"><div class="section-head"><span class="number">01 / 简介</span><h3>让测量证据转化为可使用的工具。</h3></div><div class="about-grid"><div><p class="lead">我的博士研究覆盖人体工效学支持的两个阶段：在任务或工作站尚未建立时预测工作姿态，以及在任务实施后评估姿势与生物力学暴露。</p><p>我的工作融合实验生物力学、基于计算机视觉的动作分析、统计评价和应用开发。核心问题是：如何把严谨的人体运动证据转化为更易获得、可重复的安全工作决策支持？</p></div><dl class="fact-list"><div><dt>当前身份</dt><dd>博士候选人</dd></div><div><dt>所在机构</dt><dd>奥克兰大学</dd></div><div><dt>第一作者期刊论文</dt><dd>2 篇</dd></div><div><dt>会议口头报告</dt><dd>3 次，其中 WCB 2026 两次</dd></div><div><dt>主要领域</dt><dd>生物力学与人体工效学</dd></div></dl></div></div></section>
+
+      <section class="dark"><div class="shell"><div class="section-head"><span class="number">02 / 专长</span><h3>四个相互连接的实践领域。</h3></div><div class="expertise"><article><span class="index">01</span><h4>职业生物力学</h4><p>关节运动学与动力学、逆动力学、腰椎负荷和手工搬运。</p></article><article><span class="index">02</span><h4>无标记动作捕捉</h4><p>单视角与多视角姿态估计、实验比较及效度边界。</p></article><article><span class="index">03</span><h4>数字人体建模</h4><p>姿态预测、约束优化和三维重建。</p></article><article><span class="index">04</span><h4>科研软件</h4><p>Python 应用、数据流程、交互可视化和自动报告。</p></article></div></div></section>
+
+      <section class="projects" id="research-zh"><div class="shell"><div class="section-head"><span class="number">03 / 研究</span><h3>贯穿设计、测量与评价的代表性工作。</h3></div>
+        <article class="demo-card">
+          <button class="demo-media" type="button" data-demo-open aria-label="播放在线人体工效学评估系统演示视频"><div class="demo-placeholder" aria-hidden="true"></div><img class="demo-cover" src="assets/demo-cover.jpg" alt="" hidden><span class="play"></span><span class="demo-caption">系统演示 · 视频</span></button>
+          <div class="demo-body">
+            <div><span class="tag">博士代表项目 · 演示</span><h4>在线视频人体工效学评估系统</h4><p>把普通工作现场视频转化为姿势风险、手工搬运与生物力学评估结果，并自动生成报告的网页应用。我独立完成了系统的设计、开发与评价。</p>
+              <ul class="modules"><li>RULA 与 REBA 姿势风险</li><li>修订版 NIOSH 搬举方程</li><li>静态三维逆动力学</li><li>动态生物力学分析</li></ul></div>
+            <div class="demo-actions"><button class="button" type="button" data-demo-open>▶ 观看演示</button><small>在线系统目前正在进行专家评估与迭代优化，科研合作者可申请访问。</small></div>
+          </div>
+        </article>
+        <div class="project-grid"><article class="project-card"><span class="tag">Applied Ergonomics · WCB 2026 口头报告</span><h4>职业搬举中的无标记动作捕捉</h4><p>以 Vicon 为参考，在 20 名受试者的垂直搬举、横向搬举和旋转行走搬举任务中评价 OpenCap 与 MediaPipe 的同期效度。矢状面表现较好，冠状面与水平面仍是主要局限。</p></article><article class="project-card"><span class="tag">WCB 2026 口头报告</span><h4>混合两阶段姿态预测</h4><p>将矢状面约束优化（SQP，5 个自由度）与三维上肢解析重建相结合。以 Vicon 在 12 名受试者中验证，单个姿态预测耗时 65–85 ms。</p></article></div></div></section>
+
+      <section id="experience-zh"><div class="shell"><div class="section-head"><span class="number">04 / 经历</span><h3>从一段视频，到运动、负荷与风险洞察。</h3></div>
+        <article class="experience-card">
+          <div><p class="role">研究助理（Research Assistant）</p><p class="org">奥克兰大学 · 2026 年 6 月至今</p><p class="org-sub">项目负责人：Yanxin Zhang 副教授 · 基于视频的动作分析系统</p><ul class="pipeline" aria-label="系统流程"><li>单个摄像头</li><li>三维全身运动</li><li>地面反作用力与关节负荷</li><li>运动与腰椎负荷评估报告</li></ul></div>
+          <div>
+            <p class="exp-lead">作为主要开发者，搭建了一套无标记人体运动分析系统：只需普通单摄像头视频，无需贴标记点、测力台或实验室环境。</p>
+            <div class="uses">
+              <div><h5>步态分析</h5><p>步行运动学、关节负荷与肌肉层面估计，用于运动功能评估。</p></div>
+              <div><h5>手工搬运风险评估</h5><p>针对搬举与搬运任务，估算腰椎负荷等指标，服务职业损伤预防。</p></div>
+              <div><h5>康复评估</h5><p>提供客观的运动指标，支持康复评估中的初步筛查与康复进程追踪。</p></div>
+            </div>
+            <p class="exp-tech"><strong>我的技术贡献：</strong>改进无标记姿态模型并新增颈部自由度；微调由视频运动数据预测地面反作用力的深度学习模型，在搬举任务中将预测误差降低约一半；并将其与肌骨仿真和网页界面打通。</p>
+          </div>
+        </article></div></section>
+
+      <section id="publications-zh"><div class="shell"><div class="section-head"><span class="number">05 / 成果</span><h3>同行评议论文与会议报告。</h3></div><div class="publication-list">
+        <h4 class="pub-group">期刊论文</h4>
+        <article class="publication"><time>2027</time><div><strong>Concurrent validity of markerless motion capture for occupational lifting: Kinematics and ergonomic risk assessment</strong><span>Applied Ergonomics 138, 104866 · 第一作者</span></div><a href="https://doi.org/10.1016/j.apergo.2026.104866">DOI</a></article>
+        <article class="publication"><time>2025</time><div><strong>Posture prediction models in digital human modeling for ergonomic design: A systematic review</strong><span>Medical Engineering &amp; Physics 143, 104391 · 第一作者</span></div><a href="https://doi.org/10.1016/j.medengphy.2025.104391">DOI</a></article>
+        <h4 class="pub-group">会议报告</h4>
+        <article class="publication"><time>2026</time><div><strong>Concurrent validity of markerless motion capture for assessing manual lifting kinematics <span class="badge">口头报告</span></strong><span>第十届世界生物力学大会（WCB 2026），加拿大温哥华 · OA174 职业生物力学技术专场 · 2026 年 7 月 15 日 · 报告人</span></div><span>温哥华</span></article>
+        <article class="publication"><time>2026</time><div><strong>A hybrid two-phase framework for posture prediction of manual material handling tasks <span class="badge">口头报告</span></strong><span>第十届世界生物力学大会（WCB 2026），加拿大温哥华 · OA174 职业生物力学技术专场 · 2026 年 7 月 15 日 · 报告人</span></div><span>温哥华</span></article>
+        <article class="publication"><time>2026</time><div><strong>From clipboard to camera: An online video-based ergonomic assessment system for New Zealand workplaces <span class="badge">口头报告</span></strong><span>HFESNZ 第 40 届会议 · 2026 年 9 月 16 日 · 报告人</span></div><span>奥克兰</span></article>
+      </div></div></section>
+
+      <section class="dark"><div class="shell"><div class="section-head"><span class="number">06 / 方法</span><h3>跨学科技术能力。</h3></div><div class="skills-grid"><div class="skill-block"><h4>编程与数据</h4><p>Python、MATLAB、pandas、NumPy、SciPy、SPSS 与 Excel。</p></div><div class="skill-block"><h4>计算机视觉与深度学习</h4><p>MediaPipe、OpenCap、OpenCV、PyTorch、LoRA 微调与交叉验证模型评价。</p></div><div class="skill-block"><h4>动作分析</h4><p>Vicon 与 Cortex 工作流、Visual3D、OpenSim、无标记动作捕捉和逆动力学。</p></div><div class="skill-block"><h4>应用与可视化</h4><p>使用 Streamlit、Plotly 与 ReportLab 构建交互工具和自动报告。</p></div><div class="skill-block"><h4>研究实践</h4><p>重复测量研究、同期效度、一致性分析、系统综述和科学沟通。</p></div></div></div></section>
+
+      <section class="life" id="life-zh">
+        <div class="shell">
+          <div class="life-head"><span class="number">07 / 研究之外</span><h3>力量、山野、水中与团队运动。</h3></div>
+          <div class="life-intro">
+            <div></div>
+            <div>
+              <p class="lead">运动让我始终对人体如何运动、如何适应保持好奇。平日里有力量训练和游泳，周末去徒步、攀岩或参加团队运动。亲身体会负荷、疲劳与技术动作，也让我的生物力学研究更接地气。</p>
+              <ul class="activities" aria-label="运动爱好"><li>徒步</li><li>力量训练</li><li>游泳</li><li>抱石攀岩</li><li>羽毛球</li><li>接触式橄榄球</li><li>极限飞盘</li></ul>
+            </div>
+          </div>
+          <div class="gallery">
+            <figure class="tile wide"><img src="assets/life/hiking.jpg" alt="Mengjie 在火山山脊徒步" loading="lazy" style="object-position: 50% 45%"><figcaption>徒步</figcaption></figure>
+            <figure class="tile"><img src="assets/life/gym.jpg" alt="健身房力量训练" loading="lazy" style="object-position: 50% 30%"><figcaption>力量训练</figcaption></figure>
+            <figure class="tile"><img src="assets/life/bouldering-2.jpg" alt="Mengjie 在室内攀岩墙抱石" loading="lazy" style="object-position: 50% 40%"><figcaption>抱石攀岩</figcaption></figure>
+            <figure class="tile wide"><video src="assets/life/swimming.mp4" poster="assets/life/swimming-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="在室内泳池自由泳"></video><span class="motion" aria-hidden="true"></span><figcaption>游泳</figcaption></figure>
+            <div class="tile team-card">
+              <p class="eyebrow">团队运动</p>
+              <ul><li>羽毛球</li><li>极限飞盘</li><li>接触式橄榄球</li></ul>
+              <p>快速决策、共同拼搏，还有大量奔跑。</p>
+            </div>
+            <figure class="tile"><img src="assets/life/rugby.jpg" alt="Mengjie 在沙滩训练中接橄榄球" loading="lazy" style="object-position: 40% 62%"><figcaption>接触式橄榄球</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact-zh"><div class="shell contact-grid"><div><p class="eyebrow">联系</p><h3>正在寻找科研、应用研发或人体工效学人才？</h3><p>欢迎就高校、博士后或企业岗位与我联系，尤其是生物力学、人因工程和计算工具交叉方向。</p></div><a class="button" href="mailto:mzha967@aucklanduni.ac.nz">mzha967@aucklanduni.ac.nz</a></div></section>
+    </div>
+  </main>
+
+  <dialog class="demo-modal" id="demo-modal" aria-labelledby="demo-title">
+    <div class="modal-bar"><span id="demo-title" data-en="Online ergonomic assessment system · Demo" data-zh="在线人体工效学评估系统 · 演示">Online ergonomic assessment system · Demo</span><button class="close" type="button" data-demo-close data-en="Close" data-zh="关闭">Close</button></div>
+    <video id="demo-video" controls playsinline preload="none" poster="assets/demo-cover.jpg">
+      <source src="assets/ergo-demo.mp4" type="video/mp4">
+    </video>
+    <div class="demo-missing" id="demo-missing" hidden data-en="The demo video is being prepared and will be available here shortly." data-zh="演示视频正在准备中，稍后将在此处上线。">The demo video is being prepared and will be available here shortly.</div>
+  </dialog>
+
+  <footer><div class="shell footer-row"><span>© 2026 Mengjie Zhang</span><span>Evidence-led biomechanics and ergonomics</span></div></footer>
+  <script>
+    const enButton = document.getElementById('lang-en');
+    const zhButton = document.getElementById('lang-zh');
+    const enContent = document.getElementById('en-content');
+    const zhContent = document.getElementById('zh-content');
+    const navText = document.querySelectorAll('[data-en][data-zh]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    navLinks.forEach(a => a.dataset.base = a.getAttribute('href'));
+    function setLanguage(lang) {
+      const zh = lang === 'zh';
+      document.documentElement.lang = zh ? 'zh-CN' : 'en';
+      enContent.hidden = zh;
+      zhContent.hidden = !zh;
+      enButton.setAttribute('aria-pressed', String(!zh));
+      zhButton.setAttribute('aria-pressed', String(zh));
+      navText.forEach(el => el.textContent = el.dataset[zh ? 'zh' : 'en']);
+      navLinks.forEach(a => a.setAttribute('href', a.dataset.base + (zh ? '-zh' : '')));
+      try { localStorage.setItem('profile-language', lang); } catch (e) {}
+      document.title = zh ? 'Mengjie Zhang | 生物力学与人体工效学' : 'Mengjie Zhang | Biomechanics and Ergonomics';
+      if (location.hash) history.replaceState(null, '', location.pathname);
+    }
+    enButton.addEventListener('click', () => setLanguage('en'));
+    zhButton.addEventListener('click', () => setLanguage('zh'));
+    let savedLang = 'en';
+    try { savedLang = localStorage.getItem('profile-language') || 'en'; } catch (e) {}
+    setLanguage(savedLang);
+
+    // Demo: the cover and video appear automatically once assets/demo-cover.jpg and assets/ergo-demo.mp4 exist.
+    const placeholderSvg = `
+      <div class="pane tall"><svg viewBox="0 0 100 160" preserveAspectRatio="xMidYMid meet"><g stroke="#62d9cb" stroke-width="2.2" fill="none" stroke-linecap="round"><circle cx="50" cy="22" r="8"/><path d="M50 30 L48 70 M48 70 L36 104 L40 140 M48 70 L60 104 L58 140 M49 40 L30 62 L40 78 M49 40 L68 60 L60 78"/></g><g fill="#fff"><circle cx="50" cy="30" r="2.4"/><circle cx="48" cy="70" r="2.4"/><circle cx="36" cy="104" r="2.4"/><circle cx="60" cy="104" r="2.4"/><circle cx="30" cy="62" r="2.4"/><circle cx="68" cy="60" r="2.4"/></g><rect x="34" y="74" width="32" height="14" rx="2" fill="none" stroke="#fff" stroke-opacity=".45" stroke-dasharray="3 2"/></svg></div>
+      <div class="pane"><svg viewBox="0 0 120 60" preserveAspectRatio="none"><path d="M0 45 C15 40 22 12 38 14 S60 48 78 40 S100 10 120 18" stroke="#62d9cb" stroke-width="2" fill="none"/><path d="M0 50 C18 48 30 30 45 32 S75 52 90 44 S110 30 120 34" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/></svg></div>
+      <div class="pane"><svg viewBox="0 0 120 60" preserveAspectRatio="none"><rect x="12" y="34" width="14" height="22" fill="#62d9cb" fill-opacity=".85"/><rect x="36" y="22" width="14" height="34" fill="#62d9cb" fill-opacity=".6"/><rect x="60" y="12" width="14" height="44" fill="#f2b36b" fill-opacity=".8"/><rect x="84" y="28" width="14" height="28" fill="#62d9cb" fill-opacity=".6"/></svg></div>`;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.gallery video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+    }
+    document.querySelectorAll('.demo-placeholder').forEach(el => el.innerHTML = placeholderSvg);
+    document.querySelectorAll('.demo-cover').forEach(img => {
+      const show = () => { img.hidden = false; img.previousElementSibling.hidden = true; };
+      if (img.complete && img.naturalWidth) show(); else img.addEventListener('load', show);
+    });
+    const modal = document.getElementById('demo-modal');
+    const video = document.getElementById('demo-video');
+    const missing = document.getElementById('demo-missing');
+    video.querySelector('source').addEventListener('error', () => { video.hidden = true; missing.hidden = false; });
+    document.querySelectorAll('[data-demo-open]').forEach(btn => btn.addEventListener('click', () => {
+      if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+      if (!video.hidden) video.play().catch(() => {});
+    }));
+    const closeModal = () => { video.pause(); modal.close ? modal.close() : modal.removeAttribute('open'); };
+    modal.querySelector('[data-demo-close]').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    modal.addEventListener('close', () => video.pause());
+  </script>
+</body>
+</html>
