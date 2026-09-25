@@ -226,6 +226,8 @@
     .exp-date { color: var(--accent); font-weight: 850; font-size: .92rem; font-variant-numeric: tabular-nums; }
     .exp-sum { margin-top: .2rem; color: var(--ink); font-size: .95rem; }
     .exp-card .pipeline { margin: 0 0 1.2rem; }
+    .exp-outputs { margin: 0 0 1.2rem; color: var(--ink-soft); font-size: .95rem; line-height: 1.6; }
+    .exp-outputs strong { color: var(--ink); }
     .exp-card .exp-demo { margin-top: 1.6rem; }
     .conf-authors { display: block; color: var(--ink-soft); font-size: .9rem; }
     .publication .conf-authors strong { display: inline; font-weight: 800; color: var(--ink); }
@@ -443,19 +445,19 @@
                 <span class="pub-toggle">View details</span>
               </summary>
               <div class="pub-body"><ul class="pipeline" aria-label="How the system works">
-                <li>One camera</li><li>3D full-body motion</li><li>Forces and joint loads</li><li>Movement and lumbar-load reports</li>
+                <li>Single-camera video</li><li>3D kinematics</li><li>Inverse dynamics</li><li>Muscle activation</li><li>Lumbar load and reports</li>
               </ul>
-              <div class="uses">
-                <div><h5>Gait analysis</h5><p>Walking kinematics, joint loading and muscle-level estimates for human movement analysis.</p></div>
+              <p class="exp-outputs"><strong>Analysis outputs:</strong> joint kinematics (angles, velocities and accelerations) · joint moments from inverse dynamics · lower-limb muscle activations and forces · L5/S1 spinal load · automated video and PDF reports</p><div class="uses">
+                <div><h5>Gait analysis</h5><p>Walking kinematics, joint moments and lower-limb muscle activation for human movement analysis.</p></div>
                 <div><h5>Manual-handling risk</h5><p>Lifting and handling tasks, including lumbar loading estimation, for workplace injury prevention.</p></div>
                 <div><h5>Rehabilitation assessment</h5><p>Objective movement measures to support preliminary screening and progress tracking in rehabilitation.</p></div>
               </div>
-              <p class="exp-tech"><strong>Technical contributions:</strong> adapting the markerless pose model, including added neck degrees of freedom; fine-tuning a deep-learning model that predicts ground reaction forces from video-derived motion, which cut force-prediction error by about half in lifting tasks; and linking it with musculoskeletal simulation and a web interface.</p><div class="exp-demo">
+              <p class="exp-tech"><strong>Technical contributions:</strong> adapting the markerless pose model, including added neck degrees of freedom; fine-tuning a deep-learning model that predicts ground reaction forces from video-derived motion, which cut force-prediction error by about half in lifting tasks; and integrating it with inverse dynamics, muscle-activation estimation and a web interface.</p><div class="exp-demo">
             <figure class="exp-clip"><video src="assets/ra/mskine-export-loop.mp4" poster="assets/ra/mskine-export-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Automatically exported analysis video: source footage, 3D model and lumbar angle"></video><figcaption>Automatically exported analysis video: source footage, 3D model and lumbar angle</figcaption></figure>
             <div class="exp-demo-body">
               <span class="tag">Demo</span>
               <h4>From a phone video to a 3D model and joint angles</h4>
-              <p>Workflow recording: setting up an analysis, reviewing the 3D musculoskeletal model and kinematics, and exporting the analysis video, PDF report and joint-angle data. The clip shows an automatically exported analysis video at half speed.</p>
+              <p>Workflow recording of the kinematics module: setting up an analysis, reviewing the 3D musculoskeletal model and joint angles, and exporting the analysis video, PDF report and joint-angle data. The inverse dynamics, muscle activation and spinal-load modules follow the same workflow. The clip shows an automatically exported analysis video at half speed.</p>
               <button class="button" type="button" data-demo-open="4" aria-label="Play the research assistant workflow demo">▶ Watch the workflow demo · 1:10</button>
               <small>Silent recording with on-screen captions. Results are for movement analysis, not medical diagnosis.</small>
             </div>
@@ -634,18 +636,18 @@
                 <span class="pub-main"><strong class="pub-title">研究助理</strong><span class="pub-venue">新西兰奥克兰大学 · 项目负责人：Yanxin Zhang 副教授</span><span class="exp-sum">主要开发者：基于单摄像头视频的无标记人体运动分析系统。</span></span>
                 <span class="pub-toggle">查看详情</span>
               </summary>
-              <div class="pub-body"><ul class="pipeline" aria-label="系统流程"><li>单个摄像头</li><li>三维全身运动</li><li>地面反作用力与关节负荷</li><li>运动与腰椎负荷评估报告</li></ul>
-            <div class="uses">
-              <div><h5>步态分析</h5><p>步行运动学、关节负荷与肌肉层面估计，用于运动功能评估。</p></div>
+              <div class="pub-body"><ul class="pipeline" aria-label="系统流程"><li>单摄像头视频</li><li>三维运动学</li><li>逆动力学</li><li>肌肉激活</li><li>腰椎负荷与报告</li></ul>
+            <p class="exp-outputs"><strong>分析输出：</strong>关节运动学（角度、角速度、角加速度）· 逆动力学关节力矩 · 下肢肌肉激活与肌力 · L5/S1 脊柱负荷 · 自动生成视频与 PDF 报告</p><div class="uses">
+              <div><h5>步态分析</h5><p>步行运动学、关节力矩与下肢肌肉激活，用于人体运动分析。</p></div>
               <div><h5>手工搬运风险评估</h5><p>针对搬举与搬运任务，估算腰椎负荷等指标，服务职业损伤预防。</p></div>
               <div><h5>康复评估</h5><p>提供客观的运动指标，支持康复评估中的初步筛查与康复进程追踪。</p></div>
             </div>
-            <p class="exp-tech"><strong>技术贡献：</strong>改进无标记姿态模型并新增颈部自由度；微调由视频运动数据预测地面反作用力的深度学习模型，在搬举任务中将预测误差降低约一半；并将其与肌骨仿真和网页界面打通。</p><div class="exp-demo">
+            <p class="exp-tech"><strong>技术贡献：</strong>改进无标记姿态模型并新增颈部自由度；微调由视频运动数据预测地面反作用力的深度学习模型，在搬举任务中将预测误差降低约一半；并将其与逆动力学、肌肉激活估算和网页界面整合。</p><div class="exp-demo">
             <figure class="exp-clip"><video src="assets/ra/mskine-export-loop.mp4" poster="assets/ra/mskine-export-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="自动导出的分析视频：原视频、三维骨骼模型与腰椎角度"></video><figcaption>自动导出的分析视频：原视频、三维骨骼模型与腰椎角度</figcaption></figure>
             <div class="exp-demo-body">
               <span class="tag">演示</span>
               <h4>从手机视频到三维模型与关节角度</h4>
-              <p>工作流程录屏：设置分析参数、查看三维骨骼模型与运动学结果，并导出分析视频、PDF 报告和关节角度数据。左侧为系统自动导出的分析视频（半速播放）。</p>
+              <p>运动学模块的工作流程录屏：设置分析参数、查看三维骨骼模型与关节角度，并导出分析视频、PDF 报告和关节角度数据。逆动力学、肌肉激活与脊柱负荷模块采用相同流程。左侧为系统自动导出的分析视频（半速播放）。</p>
               <button class="button" type="button" data-demo-open="4" aria-label="播放研究助理工作流程演示">▶ 观看工作流程演示 · 1:10</button>
               <small>无声录屏，配有屏幕字幕。结果用于动作分析，不作医学诊断。</small>
             </div>
