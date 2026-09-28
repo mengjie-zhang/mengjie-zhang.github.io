@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mengjie Zhang | Academic Profile</title>
+  <meta name="description" content="Academic profile of Mengjie Zhang, PhD candidate in biomechanics and ergonomics at the University of Auckland: research, projects, publications, teaching, skills and CV.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091f35'/%3E%3Cpath d='M15 46V18h8l9 15 9-15h8v28h-8V31l-9 14-9-14v15z' fill='%236ee7d8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #091f35;
+      --ink-soft: #3d5064;
+      --muted: #66788a;
+      --accent: #0b7f87;
+      --accent-bright: #62d9cb;
+      --sky: #eef7f8;
+      --line: #d6e1e4;
+      --paper: #ffffff;
+      --published: #1f7a4d;
+      --ready: #0b7f87;
+      --progress: #b7791f;
+      --planned: #8a97a3;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.65; }
+    a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(calc(100% - 2.4rem), var(--max)); margin-inline: auto; }
+    :focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
+    [hidden] { display: none !important; }
+
+    /* header */
+    .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(255,255,255,.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: var(--ink); font-weight: 780; text-decoration: none; }
+    .brand span { color: var(--muted); font-weight: 600; margin-left: .4rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.2rem; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-size: .9rem; font-weight: 650; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .switch { padding: .35rem .75rem; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); }
+
+    /* intro */
+    .intro { padding-block: 3.6rem 2.6rem; border-bottom: 1px solid var(--line); }
+    .intro-grid { display: grid; grid-template-columns: 180px 1fr; gap: 2.4rem; align-items: start; }
+    .intro img { width: 180px; aspect-ratio: 1; object-fit: cover; object-position: 50% 22%; border-radius: 50%; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(2.3rem, 5vw, 3.2rem); line-height: 1.05; letter-spacing: -.02em; }
+    .role { margin: .5rem 0 0; font-size: 1.1rem; font-weight: 650; }
+    .affil { margin: .2rem 0 0; color: var(--ink-soft); }
+    .links { display: flex; flex-wrap: wrap; gap: .5rem .6rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+    .links a { display: inline-block; padding: .3rem .7rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: .86rem; font-weight: 650; background: white; }
+    .links a:hover { border-color: var(--accent); color: var(--accent); }
+    .links a.primary { background: var(--ink); border-color: var(--ink); color: white; }
+    .bio { margin: 1.2rem 0 0; max-width: 720px; color: var(--ink-soft); }
+
+    /* sections */
+    section { padding-block: 3.2rem; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 .4rem; font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(1.7rem, 3.2vw, 2.2rem); letter-spacing: -.01em; }
+    .kicker { margin: 0 0 1.6rem; color: var(--muted); max-width: 720px; }
+    h3 { margin: 0 0 .35rem; font-size: 1.12rem; line-height: 1.35; }
+
+    /* research statement + themes */
+    .statement { max-width: 780px; }
+    .statement p { margin: 0 0 1rem; }
+    .themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; margin-top: 1.8rem; }
+    .theme { display: block; padding: 1.1rem 1.1rem 1.2rem; border: 1px solid var(--line); border-top: 3px solid var(--accent); color: var(--ink); text-decoration: none; background: white; }
+    .theme:hover { border-color: var(--accent); }
+    .theme strong { display: block; font-size: 1rem; line-height: 1.35; }
+    .theme span { display: block; margin-top: .35rem; color: var(--ink-soft); font-size: .88rem; line-height: 1.5; }
+
+    /* thesis */
+    .thesis-meta { display: grid; grid-template-columns: 170px 1fr; gap: .45rem 1.4rem; margin: 0 0 1.8rem; }
+    .thesis-meta dt { color: var(--muted); font-size: .84rem; font-weight: 750; text-transform: uppercase; letter-spacing: .06em; padding-top: .15rem; }
+    .thesis-meta dd { margin: 0; }
+    .arch { display: grid; gap: .8rem; }
+    .arch-bar { padding: .9rem 1.1rem; background: var(--ink); color: white; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .arch-bar strong { font-size: .98rem; }
+    .arch-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .arch-col { padding: 1rem; background: var(--sky); border: 1px solid var(--line); }
+    .arch-col > h3 { margin: 0; font-size: .95rem; }
+    .arch-col > p { margin: .1rem 0 .8rem; color: var(--muted); font-size: .86rem; }
+    .chap { display: grid; grid-template-columns: 58px 1fr auto; gap: .8rem; align-items: center; padding: .7rem .85rem; margin-top: .5rem; background: white; border: 1px solid var(--line); }
+    .chap b { color: var(--accent); font-size: .8rem; letter-spacing: .05em; }
+    .chap span { font-size: .92rem; line-height: 1.4; }
+    .status { display: inline-block; padding: .12rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 800; letter-spacing: .03em; white-space: nowrap; color: white; }
+    .s-pub { background: var(--published); }
+    .s-ready { background: var(--ready); }
+    .s-prog { background: var(--progress); }
+    .s-plan { background: var(--planned); }
+    .arch-bar .status { background: rgba(255,255,255,.18); }
+    .note { margin: .9rem 0 0; color: var(--muted); font-size: .84rem; }
+
+    /* projects */
+    .project { display: grid; grid-template-columns: 250px 1fr; gap: 1.8rem; padding: 1.6rem 0; border-top: 1px solid var(--line); }
+    .project:first-of-type { border-top: 0; padding-top: .4rem; }
+    .thumb { aspect-ratio: 4 / 3; border: 1px solid var(--line); background: white; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease; }
+    a.thumb:hover img { transform: scale(1.03); }
+    .project-wide { grid-template-columns: 1fr; gap: 1rem; }
+    .figure-wide { display: block; border: 1px solid var(--line); background: white; padding: .6rem; }
+    .figure-wide img { width: 100%; height: auto; }
+    .thumb.cover img { object-fit: cover; object-position: top left; }
+    .thumb.text { background: var(--sky); color: var(--accent); font-family: Georgia, serif; font-size: 1.4rem; text-align: center; padding: 1rem; }
+    .project p { margin: .3rem 0 0; color: var(--ink-soft); font-size: .95rem; }
+    .project .theme-label { margin: 0 0 .3rem; color: var(--accent); font-size: .74rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+    .tag { display: inline-block; padding: .14rem .55rem; border-radius: 4px; background: var(--sky); color: var(--accent); font-size: .78rem; font-weight: 800; text-decoration: none; }
+    a.tag:hover { background: var(--accent); color: white; }
+    .tag.muted { background: #f1f3f5; color: var(--ink-soft); }
+
+    /* publications */
+    .pub-h { margin: 2rem 0 .6rem; font-size: .82rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .pub-h:first-of-type { margin-top: 0; }
+    ol.pubs { margin: 0; padding: 0; list-style: none; counter-reset: pub; }
+    ol.pubs > li { position: relative; padding: .8rem 0 .8rem 2.6rem; border-top: 1px solid var(--line); counter-increment: pub; }
+    ol.pubs > li::before { content: "[" counter(pub) "]"; position: absolute; left: 0; top: .8rem; color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; }
+    .cite { font-size: .95rem; }
+    .cite em { color: var(--ink-soft); }
+    .cite .t { font-weight: 700; color: var(--ink); }
+    .pub-links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .45rem; align-items: center; }
+    details.abs { margin-top: .5rem; }
+    details.abs summary { display: inline-block; cursor: pointer; color: var(--accent); font-size: .85rem; font-weight: 750; list-style: none; }
+    details.abs summary::-webkit-details-marker { display: none; }
+    details.abs summary::after { content: " +"; }
+    details.abs[open] summary::after { content: " −"; }
+    details.abs div { margin-top: .6rem; padding: .9rem 1rem; background: var(--sky); color: var(--ink-soft); font-size: .92rem; }
+    details.abs p { margin: 0 0 .5rem; }
+    details.abs small { color: var(--muted); }
+
+    /* two-column lists */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+    .dl { margin: 0; }
+    .dl div { display: grid; grid-template-columns: 150px 1fr; gap: 1rem; padding: .65rem 0; border-top: 1px solid var(--line); }
+    .dl dt { color: var(--accent); font-weight: 800; font-size: .88rem; font-variant-numeric: tabular-nums; }
+    .dl dd { margin: 0; font-size: .95rem; }
+    .dl dd span { display: block; color: var(--muted); font-size: .88rem; }
+    .methods { display: grid; grid-template-columns: 200px 1fr; gap: 0; }
+    .methods dt, .methods dd { padding: .7rem 0; border-top: 1px solid var(--line); margin: 0; }
+    .methods dt { font-weight: 750; font-size: .92rem; padding-right: 1rem; }
+    .methods dd { color: var(--ink-soft); font-size: .94rem; }
+    ul.plain { margin: 0; padding-left: 1.1rem; }
+    ul.plain li { margin-bottom: .45rem; }
+    ul.plain li::marker { color: var(--accent); }
+
+    footer { padding: 2rem 0 2.6rem; color: var(--muted); font-size: .85rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.switch) { display: none; }
+      .intro-grid, .project, .cols, .arch-cols { grid-template-columns: 1fr; }
+      .intro img { width: 130px; }
+      .themes { grid-template-columns: 1fr 1fr; }
+      .project { gap: 1rem; }
+      .thumb { max-width: 420px; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(calc(100% - 2rem), var(--max)); }
+      .themes { grid-template-columns: 1fr; }
+      .thesis-meta, .dl div, .methods { grid-template-columns: 1fr; }
+      .thesis-meta dd { margin-bottom: .5rem; }
+      .methods dt { border-top: 1px solid var(--line); padding-bottom: 0; }
+      .methods dd { border-top: 0; padding-top: .2rem; }
+      .chap { grid-template-columns: 48px 1fr; }
+      .chap .status { grid-column: 2; justify-self: start; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  
+    .language { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: white; }
+    .language button { border: 0; background: transparent; padding: .32rem .62rem; border-radius: 999px; cursor: pointer; color: var(--ink-soft); font-weight: 750; font: inherit; font-size: .85rem; }
+    .language button[aria-pressed="true"] { background: var(--ink); color: white; }
+    button.tag { border: 0; cursor: pointer; font: inherit; font-size: .78rem; font-weight: 800; }
+    button.tag:hover { background: var(--accent); color: white; }
+    .demo-modal { width: min(1080px, calc(100% - 2rem)); padding: 0; border: 0; background: #000; color: white; }
+    .demo-modal::backdrop { background: rgba(9,31,53,.82); }
+    .demo-modal video { display: block; width: 100%; max-height: 78vh; background: #000; }
+    .modal-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .65rem 1rem; background: var(--ink); font-size: .9rem; }
+    .modal-bar button, .modal-mods button { border: 1px solid rgba(255,255,255,.4); background: transparent; color: white; border-radius: 6px; padding: .3rem .7rem; cursor: pointer; font: inherit; font-size: .85rem; font-weight: 700; }
+    .modal-mods { display: flex; flex-wrap: wrap; gap: .4rem; padding: .6rem 1rem; background: var(--ink); }
+    .modal-mods button[aria-pressed="true"] { background: var(--accent-bright); border-color: var(--accent-bright); color: var(--ink); }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#top">Mengjie Zhang<span data-en="Academic profile" data-zh="学术主页">Academic profile</span></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#research" data-base="research" data-en="Research" data-zh="研究">Research</a><a href="#projects" data-base="projects" data-en="Projects" data-zh="项目">Projects</a><a href="#publications" data-base="publications" data-en="Publications" data-zh="成果">Publications</a><a href="#teaching" data-base="teaching" data-en="Teaching" data-zh="教学">Teaching</a><a href="#skills" data-base="skills" data-en="Skills" data-zh="技能">Skills</a><a href="#cv" data-base="cv" data-en="CV" data-zh="简历">CV</a>
+        <div class="language" aria-label="Language selection"><button id="lang-en" type="button" aria-pressed="true">EN</button><button id="lang-zh" type="button" aria-pressed="false">中文</button></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div id="en-content">
+    <div class="intro">
+      <div class="shell intro-grid">
+        <img src="assets/mengjie-portrait.jpg" alt="Portrait of Mengjie Zhang">
+        <div>
+          <h1>Mengjie Zhang</h1>
+          <p class="role">PhD Candidate in Biomechanics and Ergonomics</p>
+          <p class="affil">School of Exercise, Sport and Rehabilitation Sciences, The University of Auckland, New Zealand</p>
+          <p class="affil">China Scholarship Council (CSC) doctoral scholar · PhD expected 2027</p>
+          <ul class="links">
+            <li><a class="primary" href="downloads/Mengjie_Zhang_Academic_CV_2026.pdf">Academic CV (PDF)</a></li>
+            <li><a href="https://orcid.org/0009-0006-8016-8904">ORCID 0009-0006-8016-8904</a></li>
+            <li><a href="mailto:mengjie.zhang@auckland.ac.nz">mengjie.zhang@auckland.ac.nz</a></li>
+            <li><a href="mailto:mzha967@aucklanduni.ac.nz">mzha967@aucklanduni.ac.nz</a></li>
+          </ul>
+          <p class="bio">My research provides computational support for ergonomic risk management across two phases of manual work: predicting working postures before a task or workstation exists, and assessing postural and biomechanical exposure once it does.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="research">
+      <div class="shell">
+        <h2>Research</h2>
+        <div class="statement"><p>Two complementary tools are developed and evaluated: a hybrid two-phase posture prediction model for the design phase, and an online video-based ergonomic assessment system for the evaluation phase. The markerless measurement technology on which the system depends is validated first, the system is developed on that basis, and the system&rsquo;s outputs are then evaluated against established reference methods and with expert end users.</p><p>As a research assistant, I am the lead developer of a markerless system for human movement analysis from ordinary single-camera video, requiring no markers, force plates or laboratory set-up, and supporting gait analysis, manual-handling risk assessment with lumbar loading estimation, and preliminary screening in rehabilitation assessment.</p><p>This work builds on my master&rsquo;s research at Beijing Sport University in China on the effects of the bending stiffness of racing running shoes on the running economy and lower-limb biomechanical characteristics of runners.</p></div>
+        <div class="themes"><a class="theme" href="#p-review"><strong>Digital human modelling and posture prediction</strong><span>Posture prediction that supports ergonomic evaluation at the design stage, before a physical workstation or task exists.</span></a><a class="theme" href="#p-validity"><strong>Markerless motion capture validity</strong><span>Which pose estimation approach is accurate enough, and for which joints, to support automated ergonomic assessment.</span></a><a class="theme" href="#p-system"><strong>Video-based ergonomic assessment</strong><span>Postural, manual handling and biomechanical risk assessment from a single standard video.</span></a><a class="theme" href="#p-msk"><strong>Data-driven musculoskeletal modelling</strong><span>Ground reaction force prediction and musculoskeletal analysis from single-camera video.</span></a><a class="theme" href="#p-footwear"><strong>Sports biomechanics</strong><span>Running economy and lower-limb biomechanics in racing shoes with different bending stiffness.</span></a></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="shell">
+        <h2>Research projects</h2>
+        <p class="kicker">Selected projects, with the outputs each has produced.</p>
+        <article class="project" id="p-review">
+          <a class="thumb" href="assets/academic/review-prisma.jpg"><img src="assets/academic/review-prisma.jpg" alt="PRISMA flow diagram of study selection for the systematic review" loading="lazy"></a>
+          <div>
+            <p class="theme-label">Digital human modelling · Doctoral research</p>
+            <h3>Posture prediction models in digital human modeling for ergonomic design: A systematic review</h3><p>This systematic review critically assessed the development, validation, and applications of posture prediction models in Digital Human Modeling (DHM). Following PRISMA guidelines, 24 studies were included from a search across nine academic databases, categorized into data-driven models (n = 12) and optimization-based models (n = 12). Future research should prioritize hybrid strategies that combine learning-based inference with biomechanical simulation, offering a promising path toward achieving both accuracy and physiological realism in posture prediction.</p><div class="tags"><a class="tag" href="https://doi.org/10.1016/j.medengphy.2025.104391">Medical Engineering &amp; Physics 2025</a><span class="tag muted">Open access</span></div>
+          </div>
+        </article><article class="project project-wide" id="p-hybrid">
+          <div>
+            <p class="theme-label">Digital human modelling · Doctoral research</p>
+            <h3>A hybrid two-phase framework for posture prediction of manual material handling tasks</h3><p>This study developed a hybrid two-phase modelling approach combining sagittal-plane whole-body optimisation with analytical 3D upper-limb reconstruction. Phase I employed a 5-degree-of-freedom (DOF) constrained nonlinear optimisation that minimised the trunk moment, subject to task and biomechanical constraints. Phase II analytically reconstructed 4-DOF upper-limb posture through inverse kinematics with empirically derived humeral rotation constraints. Posture predictions were compared with marker-based motion capture in twelve participants performing vertical lifting, and shoulder-height and above-shoulder drilling. Joint-angle RMSE ranged from 4.0° to 37.5°, with a total computation time of approximately 85 ms per posture. The modular architecture and sub-100 ms computation time support integration into digital human modelling workflows and early-stage ergonomic design.</p>
+            <div class="tags"><span class="tag">WCB 2026 · Oral</span><span class="tag muted">Manuscript completed, ready for submission</span></div>
+          </div>
+          <a class="figure-wide" href="assets/academic/hybrid-framework.jpg"><img src="assets/academic/hybrid-framework.jpg" alt="Hybrid two-phase posture prediction framework: model inputs, Phase I constrained sagittal-plane optimisation, Phase II analytical 3D upper-limb reconstruction and predicted posture" loading="lazy"></a>
+        </article><article class="project" id="p-validity">
+          <a class="thumb" href="assets/academic/validity-rmse.jpg"><img src="assets/academic/validity-rmse.jpg" alt="Joint-angle waveforms from Vicon, OpenCap and MediaPipe across three lifting tasks" loading="lazy"></a>
+          <div>
+            <p class="theme-label">Markerless motion capture · Doctoral research</p>
+            <h3>Concurrent validity of markerless motion capture for occupational lifting: Kinematics and ergonomic risk assessment</h3><p>This study compared a multi-view system (OpenCap) and a monocular system (MediaPipe) against a marker-based reference system (Vicon) for lifting kinematics. Twenty healthy participants performed three two-handed lifting tasks of increasing complexity under controlled laboratory conditions. Errors increased by 15–30% from symmetrical to asymmetric multi-planar tasks. Both systems were reliable for symmetrical lifting, including high REBA agreement, but validity declined for tasks involving trunk rotation and walking.</p><div class="tags"><a class="tag" href="https://doi.org/10.1016/j.apergo.2026.104866">Applied Ergonomics 2027</a><span class="tag">WCB 2026 · Oral</span><span class="tag muted">Open access</span></div>
+          </div>
+        </article><article class="project" id="p-system">
+          <a class="thumb cover" href="assets/demo/module1-thumb.jpg"><img src="assets/demo/module1-thumb.jpg" alt="Screenshot of the postural risk module of the online assessment system" loading="lazy"></a>
+          <div>
+            <p class="theme-label">Video-based ergonomic assessment · Doctoral research</p>
+            <h3>From clipboard to camera: an online video-based ergonomic assessment system for New Zealand workplaces</h3><p>An online video-based ergonomic assessment system that analyses workplace tasks from a single standard video using markerless pose estimation, removing the need for markers, wearable sensors, force plates or a laboratory. Four modules run from the same video: RULA and REBA postural scoring; NIOSH Recommended Weight Limit and Lifting Index; static joint moments and L5/S1 spinal compression; and dynamic biomechanics across full movement cycles. REBA risk categories agreed with the reference in 84% of 132 trials, the NIOSH Lifting Index showed a mean absolute error of 0.13, and trunk moment and L5/S1 compression showed moderate agreement with 3DSSPP (ICC 0.74 and 0.58).</p><div class="tags"><span class="tag">HFESNZ 2026 · Oral</span><span class="tag muted">Manuscript drafted</span><button class="tag" type="button" data-demo="0">▶ Watch module demos</button></div>
+          </div>
+        </article><article class="project" id="p-msk">
+          <a class="thumb cover" href="assets/ra/mskine-export-poster.jpg"><img src="assets/ra/mskine-export-poster.jpg" alt="Exported analysis frame showing source video, 3D skeletal model and lumbar angle curve" loading="lazy"></a>
+          <div>
+            <p class="theme-label">Data-driven musculoskeletal modelling · Research assistant project</p>
+            <h3>Single-camera musculoskeletal analysis with deep-learning ground reaction force prediction</h3><p>Lead developer of a markerless system for human movement analysis from ordinary single-camera video, requiring no markers, force plates or laboratory set-up. The system links video-derived kinematics with deep-learning ground reaction force prediction, inverse dynamics and muscle-activation estimation, with an adapted pose model that adds neck degrees of freedom. Fine-tuning a pretrained model for occupational lifting (low-rank adaptation with external-load conditioning) reduced vertical ground reaction force error by 46% relative to the zero-shot pretrained baseline (18.3% to 9.8% body weight RMSE) in 19-fold leave-one-subject-out cross-validation across 182 lifting trials, while training fewer than 1% of the model parameters (development-stage results).</p><div class="tags"><span class="tag muted">Research assistant · 2026–present</span><button class="tag" type="button" data-demo="4">▶ Watch workflow demo</button></div>
+          </div>
+        </article><article class="project" id="p-footwear">
+          <a class="thumb cover" href="assets/academic/footwear-collage.jpg"><img src="assets/academic/footwear-collage.jpg" alt="Treadmill running-economy test with gas analysis, shoe bending-stiffness testing, and a motion capture skeletal model" loading="lazy"></a>
+          <div>
+            <p class="theme-label">Sports biomechanics · Master&rsquo;s research</p>
+            <h3>The effect of running economy in male runners wearing 3 types of footwear</h3><p>The purpose of this study was to identify the effect of running economy in male runners wearing three types of racing footwear with different midsole bending stiffness. In twelve male middle-caliber runners, one racing shoe improved running economy and energy expenditure compared with another at 80% of the speed eliciting VO<sub>2</sub>max, but these improvements had no differences among the three types of footwear at 60% and 70% of vVO<sub>2</sub>max.</p><div class="tags"><a class="tag" href="https://commons.nmu.edu/isbs/vol40/iss1/193/">ISBS 2022</a><span class="tag muted">Beijing Sport University, China</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="shell">
+        <h2>Publications</h2>
+        <p class="kicker">* Corresponding author. Names in bold indicate Mengjie Zhang.</p>
+        <h3 class="pub-h">Journal articles</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., Boocock, M.*, &amp; Zhang, Y.* (2027). <span class="t">Concurrent validity of markerless motion capture for occupational lifting: Kinematics and ergonomic risk assessment.</span> <em>Applied Ergonomics</em>, 138, 104866.</div>
+            <div class="pub-links"><a class="tag" href="https://doi.org/10.1016/j.apergo.2026.104866">DOI</a><span class="tag muted">Open access · CC BY</span></div>
+            <details class="abs"><summary>Abstract</summary><div><p>Markerless motion capture has the potential to enhance ergonomic risk assessment, but evidence remains limited for occupational manual handling tasks of increasing complexity. This study compared a multi-view system (OpenCap) and a monocular system (MediaPipe) against a marker-based reference system (Vicon) for lifting kinematics. Outcomes were assessed using the Rapid Entire Body Assessment (REBA) risk assessment tool. Twenty healthy participants performed three two-handed lifting tasks of increasing complexity under controlled laboratory conditions. Errors increased by 15–30% from symmetrical to asymmetric multi-planar tasks, with both systems demonstrating lower error in the sagittal plane (RMSE = 9.9–31.2°) than in the frontal and transverse planes. Both systems were reliable for symmetrical lifting, including high REBA agreement, but validity declined for tasks involving trunk rotation and walking. MediaPipe showed lower error for trunk and proximal joints, whereas OpenCap performed better for distal kinematics, informing practical system selection.</p><small>Keywords: markerless motion capture; manual handling; work-related musculoskeletal disorders. © 2026 The Authors, published by Elsevier Ltd under a CC BY licence.</small></div></details></li><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., &amp; Zhang, Y.* (2025). <span class="t">Posture prediction models in digital human modeling for ergonomic design: A systematic review.</span> <em>Medical Engineering &amp; Physics</em>, 143, 104391.</div>
+            <div class="pub-links"><a class="tag" href="https://doi.org/10.1016/j.medengphy.2025.104391">DOI</a><span class="tag muted">Open access · CC BY</span></div>
+            <details class="abs"><summary>Abstract</summary><div><p>Posture prediction models have been widely used to support ergonomic design. This systematic review critically assessed the development, validation, and applications of posture prediction models in Digital Human Modeling (DHM). Following PRISMA guidelines, 24 studies were included from a search across nine academic databases, categorized into data-driven models (n = 12) and optimization-based models (n = 12). Data-driven models, particularly those employing neural network regression and artificial neural networks, demonstrated strong predictive accuracy and adaptability, but often lacked generalizability due to data imbalance and limited participant/task diversity. Optimization-based models, using algorithms such as gradient descent and genetic algorithms, showed high biomechanical fidelity but computational challenges and limited computer-aided design (CAD) integration. While a few models have been integrated with existing CAD software such as JACK and Santos™, most lacked ergonomic evaluation and real-time usability. Limitations identified include insufficient diverse datasets, computational inefficiencies, and limited validation in real-world conditions. Future research should prioritize model development supported by scalable motion data using computer vision-based technologies and hybrid strategies that combine learning-based inference with biomechanical simulation, offering a promising path toward achieving both accuracy and physiological realism in posture prediction.</p><small>Keywords: digital human modeling; posture prediction; human factors; ergonomics; CAD integration; work-related injuries; workplace safety; computer vision-based technique. © 2025 The Author(s), published by Elsevier Ltd on behalf of IPEM under a CC BY licence.</small></div></details></li></ol>
+        <h3 class="pub-h">Manuscripts</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. <span class="t">A hybrid two-phase framework for posture prediction of manual material handling tasks.</span></div><div class="pub-links"><span class="tag">Manuscript completed, ready for submission</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. <span class="t">Development of an online video-based ergonomic assessment system.</span></div><div class="pub-links"><span class="tag muted">Manuscript drafted, being refined for submission</span></div></li></ol>
+        <h3 class="pub-h">Conference presentations and proceedings</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. (2026). <span class="t">From clipboard to camera: an online video-based ergonomic assessment system for New Zealand workplaces.</span> HFESNZ 40th Conference, Wellington, New Zealand, 16 September 2026.</div><div class="pub-links"><span class="tag">Oral presentation</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. (2026). <span class="t">A Hybrid Two-Phase Framework for Posture Prediction of Manual Material Handling Tasks.</span> 10th World Congress of Biomechanics (WCB 2026), Vancouver, Canada, 15 July 2026.</div><div class="pub-links"><span class="tag">Oral presentation</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., Boocock, M., &amp; Zhang, Y. (2026). <span class="t">Concurrent Validity of Markerless Motion Capture for Assessing Manual Lifting Kinematics.</span> 10th World Congress of Biomechanics (WCB 2026), Vancouver, Canada, 15 July 2026.</div><div class="pub-links"><span class="tag">Oral presentation</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, &amp; Li, H. (2022). <span class="t">The effect of running economy in male runners wearing 3 types of footwear.</span> <em>Proceedings of the 40th Conference of the International Society of Biomechanics in Sports</em>, 40(1), Article 193.</div><div class="pub-links"><a class="tag" href="https://commons.nmu.edu/isbs/vol40/iss1/193/">ISBS archive</a></div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">The impact of four racing shoes on the running economy of runners.</span> <em>Proceedings of the 22nd National Sports Biomechanics Academic Conference</em> (in Chinese).</div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">Differences in running economy and energy consumption in different marathon running shoes.</span> <em>Proceedings of the Seventh International Symposium on Sports and Health</em> (in Chinese).</div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">Effects of Different Types of Running Shoes on Running Economy—Visual Analysis.</span> The 2nd Human Sports Science Conference (in Chinese).</div><div class="pub-links"><span class="tag">Oral presentation</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2021). <span class="t">Research progress on the influence of strength training on the running economy of middle-distance runners.</span> <em>Medical Biomechanics</em>, 36(S8), 420 (in Chinese).</div></li><li><div class="cite">Chen, X., <strong>Zhang, M.</strong>, &amp; Li, H. (2021). <em>Proceedings of the 21st National Sports Biomechanics Academic Exchange Conference</em> (in Chinese).</div></li></ol>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="shell cols">
+        <div>
+          <h2>Teaching and mentoring</h2>
+          <dl class="dl"><div><dt>2024 – present</dt><dd><strong>Research mentoring</strong><span>Guided postgraduate students through motion capture data collection, data processing and analysis, and the writing of research reports and academic manuscripts.</span></dd></div><div><dt>2024 – present</dt><dd><strong>Teaching assistance</strong><span>Tutorial support and coursework marking in the School of Exercise, Sport and Rehabilitation Sciences.</span></dd></div></dl>
+        </div>
+        <div>
+          <h2>Scholarships</h2>
+          <dl class="dl"><div><dt>Oct 2023 – Oct 2027</dt><dd>China Scholarship Council (CSC) doctoral scholarship (48 months)<span>The University of Auckland, New Zealand</span></dd></div></dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="shell">
+        <h2>Skills</h2>
+        <p class="kicker">Laboratory, modelling, analytical and software skills applied across the projects above.</p>
+        <dl class="methods"><dt>Motion capture</dt><dd>Vicon (14-camera; Plug-in Gait full-body model, 39 markers; Nexus), Motion Analysis (8-camera, Cortex), markerless capture with OpenCap (multi-view) and MediaPipe (single camera)</dd><dt>Kinetics and physiology</dt><dd>Kistler force platforms; Cosmed K4b2 portable gas analyser and VO<sub>2</sub>max testing; blood lactate analysis; isokinetic dynamometry; wireless surface EMG</dd><dt>Modelling</dt><dd>Inverse kinematics and inverse dynamics, musculoskeletal modelling (OpenSim, Visual3D), static optimisation, digital human modelling, constrained nonlinear optimisation (sequential quadratic programming)</dd><dt>Machine learning</dt><dd>Pose estimation, fine-tuning of pretrained deep-learning models (PyTorch; low-rank adaptation), leave-one-subject-out cross-validation</dd><dt>Ergonomic methods</dt><dd>RULA, REBA, the Revised NIOSH Lifting Equation, L5/S1 compression estimation and 3DSSPP reference comparison</dd><dt>Statistics and evidence synthesis</dt><dd>RMSE and normalised RMSE, coefficient of determination, repeated-measures ANOVA, Spearman correlation, agreement analysis, PRISMA-guided systematic review (SPSS, Python, MATLAB)</dd><dt>Software development</dt><dd>Python (Streamlit, pandas, NumPy, SciPy, Plotly, ReportLab), MATLAB</dd></dl>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="shell cols">
+        <div>
+          <h2>Education</h2>
+          <dl class="dl"><div><dt>2023 – 2027 (expected)</dt><dd>PhD, Biomechanics and Ergonomics<span>The University of Auckland, New Zealand</span></dd></div><div><dt>2020 – 2023</dt><dd>Master&rsquo;s degree, Sport Human Science<span>Beijing Sport University, China</span></dd></div><div><dt>2016 – 2020</dt><dd>Bachelor&rsquo;s degree, Sport Human Science<span>Beijing Sport University, China</span></dd></div></dl>
+        </div>
+        <div>
+          <h2>Curriculum vitae</h2>
+          <p style="margin-top:0;color:var(--ink-soft)">The full academic CV lists education, publications, research experience, teaching and skills.</p>
+          <ul class="links"><li><a class="primary" href="downloads/Mengjie_Zhang_Academic_CV_2026.pdf">Download academic CV (PDF)</a></li></ul>
+        </div>
+      </div>
+    </section>
+    </div>
+    <div id="zh-content" lang="zh-CN" hidden>
+    <div class="intro">
+      <div class="shell intro-grid">
+        <img src="assets/mengjie-portrait.jpg" alt="Mengjie Zhang 肖像">
+        <div>
+          <h1>Mengjie Zhang</h1>
+          <p class="role">生物力学与人体工效学博士候选人</p>
+          <p class="affil">新西兰奥克兰大学运动、体育与康复科学学院</p>
+          <p class="affil">国家留学基金委（CSC）公派博士 · 预计 2027 年获授博士学位</p>
+          <ul class="links">
+            <li><a class="primary" href="downloads/Mengjie_Zhang_Academic_CV_ZH_2026.pdf">学术简历（PDF）</a></li>
+            <li><a href="https://orcid.org/0009-0006-8016-8904">ORCID 0009-0006-8016-8904</a></li>
+            <li><a href="mailto:mengjie.zhang@auckland.ac.nz">mengjie.zhang@auckland.ac.nz</a></li>
+            <li><a href="mailto:mzha967@aucklanduni.ac.nz">mzha967@aucklanduni.ac.nz</a></li>
+          </ul>
+          <p class="bio">研究面向手工作业的两个阶段，为工效学风险管理提供计算支持：在任务或工位建立之前预测作业姿态，在作业开展之后评估姿势与生物力学暴露。</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="research-zh">
+      <div class="shell">
+        <h2>研究</h2>
+        <div class="statement"><p>围绕这两个阶段，开发并评价了两个互补的工具：用于设计阶段的混合两阶段姿态预测模型，以及用于评估阶段的在线视频人体工效学评估系统。研究首先验证系统所依赖的无标记测量技术，在此基础上开发系统，再将系统输出与既定参考方法进行比较，并开展专家用户评估。</p><p>研究助理期间，主导开发基于普通单摄像头视频的无标记人体运动分析系统。该系统无需标记点、测力台或实验室环境，可用于步态分析、手工搬运风险评估（含腰椎负荷估算）以及康复评估中的初步筛查。</p><p>上述工作建立在中国北京体育大学的硕士研究基础之上，硕士课题为竞速跑鞋弯曲刚度对跑者跑步经济性及下肢生物力学特征的影响。</p></div>
+        <div class="themes"><a class="theme" href="#p-review-zh"><strong>数字人体建模与姿态预测</strong><span>在工位或任务实际建立之前，为设计阶段的工效学评估预测作业姿态。</span></a><a class="theme" href="#p-validity-zh"><strong>无标记动作捕捉效度</strong><span>明确哪种姿态估计方法、在哪些关节上足以支持自动化工效学评估。</span></a><a class="theme" href="#p-system-zh"><strong>视频工效学评估</strong><span>基于单个普通视频的姿势、手工搬运与生物力学风险评估。</span></a><a class="theme" href="#p-msk-zh"><strong>数据驱动的肌骨建模</strong><span>基于单摄像头视频的地面反作用力预测与肌骨分析。</span></a><a class="theme" href="#p-footwear-zh"><strong>运动生物力学</strong><span>不同弯曲刚度竞速跑鞋下的跑步经济性与下肢生物力学。</span></a></div>
+      </div>
+    </section>
+
+    <section id="projects-zh">
+      <div class="shell">
+        <h2>研究项目</h2>
+        <p class="kicker">代表性研究项目及其成果。</p>
+        <article class="project" id="p-review-zh">
+          <a class="thumb" href="assets/academic/review-prisma.jpg"><img src="assets/academic/review-prisma.jpg" alt="系统综述的 PRISMA 文献筛选流程图" loading="lazy"></a>
+          <div>
+            <p class="theme-label">数字人体建模 · 博士研究</p>
+            <h3>数字人体建模中用于工效学设计的姿态预测模型：系统综述</h3><p>本系统综述评估了数字人体建模（DHM）中姿态预测模型的开发、验证与应用。依据 PRISMA 指南检索九个学术数据库，纳入 24 项研究，分为数据驱动模型（n = 12）与优化模型（n = 12）。未来研究应优先发展结合学习推断与生物力学仿真的混合策略，以同时实现姿态预测的准确性与生理真实性。</p><div class="tags"><a class="tag" href="https://doi.org/10.1016/j.medengphy.2025.104391">Medical Engineering &amp; Physics 2025</a><span class="tag muted">开放获取</span></div>
+          </div>
+        </article><article class="project project-wide" id="p-hybrid-zh">
+          <div>
+            <p class="theme-label">数字人体建模 · 博士研究</p>
+            <h3>面向手工物料搬运任务的混合两阶段姿态预测框架</h3><p>本研究构建了将矢状面全身优化与三维上肢解析重建相结合的混合两阶段建模方法。第一阶段采用 5 个自由度的约束非线性优化，在任务与生物力学约束下最小化躯干力矩；第二阶段基于经验肱骨旋转约束，通过逆运动学解析重建 4 个自由度的上肢姿态。在 12 名受试者的垂直搬举、肩高钻孔与过肩钻孔任务中，与标记点动作捕捉比较，关节角度 RMSE 为 4.0°–37.5°，单个姿态总计算时间约 85 ms。模块化架构与低于 100 ms 的计算时间，可支持其整合进数字人体建模流程与早期工效学设计。</p>
+            <div class="tags"><span class="tag">WCB 2026 · 口头报告</span><span class="tag muted">论文已完成，即将投稿</span></div>
+          </div>
+          <a class="figure-wide" href="assets/academic/hybrid-framework.jpg"><img src="assets/academic/hybrid-framework.jpg" alt="混合两阶段姿态预测框架：模型输入、第一阶段矢状面约束优化、第二阶段三维上肢解析重建与预测姿态" loading="lazy"></a>
+        </article><article class="project" id="p-validity-zh">
+          <a class="thumb" href="assets/academic/validity-rmse.jpg"><img src="assets/academic/validity-rmse.jpg" alt="三类搬举任务中 Vicon、OpenCap 与 MediaPipe 的关节角度曲线对比" loading="lazy"></a>
+          <div>
+            <p class="theme-label">无标记动作捕捉 · 博士研究</p>
+            <h3>无标记动作捕捉在职业搬举中的同期效度：运动学与工效学风险评估</h3><p>本研究以标记点参考系统（Vicon）为标准，比较多视角系统（OpenCap）与单目系统（MediaPipe）的搬举运动学。20 名健康受试者在受控实验室条件下完成三类复杂度递增的双手搬举任务。由对称搬举到非对称多平面任务，误差增加 15–30%。两套系统在对称搬举中可靠，REBA 一致性高，但在涉及躯干旋转与行走的任务中效度下降。</p><div class="tags"><a class="tag" href="https://doi.org/10.1016/j.apergo.2026.104866">Applied Ergonomics 2027</a><span class="tag">WCB 2026 · 口头报告</span><span class="tag muted">开放获取</span></div>
+          </div>
+        </article><article class="project" id="p-system-zh">
+          <a class="thumb cover" href="assets/demo/module1-thumb.jpg"><img src="assets/demo/module1-thumb.jpg" alt="在线评估系统姿势风险模块截图" loading="lazy"></a>
+          <div>
+            <p class="theme-label">视频工效学评估 · 博士研究</p>
+            <h3>从记录板到摄像头：面向新西兰工作场所的在线视频人体工效学评估系统</h3><p>在线视频人体工效学评估系统基于单个普通视频，采用无标记姿态估计分析作业任务，无需标记点、可穿戴传感器、测力台或实验室。同一视频可运行四个模块：RULA 与 REBA 姿势评分；NIOSH 推荐重量限值与搬举指数；静态关节力矩与 L5/S1 脊柱压缩力；以及完整动作周期的动态生物力学。REBA 风险等级在 132 次试验中与参考方法一致率为 84%，NIOSH 搬举指数平均绝对误差为 0.13，躯干力矩与 L5/S1 压缩力与 3DSSPP 呈中等一致性（ICC 0.74 与 0.58）。</p><div class="tags"><span class="tag">HFESNZ 2026 · 口头报告</span><span class="tag muted">初稿已完成</span><button class="tag" type="button" data-demo="0">▶ 观看模块演示</button></div>
+          </div>
+        </article><article class="project" id="p-msk-zh">
+          <a class="thumb cover" href="assets/ra/mskine-export-poster.jpg"><img src="assets/ra/mskine-export-poster.jpg" alt="导出的分析画面：原视频、三维骨骼模型与腰椎角度曲线" loading="lazy"></a>
+          <div>
+            <p class="theme-label">数据驱动的肌骨建模 · 研究助理项目</p>
+            <h3>基于单摄像头与深度学习地面反作用力预测的肌骨分析</h3><p>主要开发者：基于普通单摄像头视频的无标记人体运动分析系统，无需标记点、测力台或实验室环境。系统将视频运动学与深度学习地面反作用力预测、逆动力学和肌肉激活估算相结合，并改进姿态模型、新增颈部自由度。针对职业搬举任务微调预训练模型（低秩适配与外部负荷条件输入），在 182 次搬举试验的 19 折留一受试者交叉验证中，垂直地面反作用力误差较零样本预训练基线降低 46%（RMSE 由 18.3% 体重降至 9.8% 体重），且仅训练不到 1% 的模型参数（开发阶段结果）。</p><div class="tags"><span class="tag muted">研究助理 · 2026 至今</span><button class="tag" type="button" data-demo="4">▶ 观看工作流程演示</button></div>
+          </div>
+        </article><article class="project" id="p-footwear-zh">
+          <a class="thumb cover" href="assets/academic/footwear-collage.jpg"><img src="assets/academic/footwear-collage.jpg" alt="跑台跑步经济性测试与气体代谢、跑鞋弯曲刚度测试，以及动作捕捉骨骼模型" loading="lazy"></a>
+          <div>
+            <p class="theme-label">运动生物力学 · 硕士研究</p>
+            <h3>男性跑者穿着三种跑鞋的跑步经济性</h3><p>本研究旨在明确男性跑者穿着三款中底弯曲刚度不同的竞速跑鞋时跑步经济性的差异。在 12 名中等水平男性跑者中，于 80% 最大摄氧量速度下，其中一款竞速跑鞋的跑步经济性与能量消耗优于另一款，但在 60% 与 70% 最大摄氧量速度下，三款跑鞋之间无差异。</p><div class="tags"><a class="tag" href="https://commons.nmu.edu/isbs/vol40/iss1/193/">ISBS 2022</a><span class="tag muted">中国北京体育大学</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications-zh">
+      <div class="shell">
+        <h2>发表成果</h2>
+        <p class="kicker">* 通讯作者；加粗为本人。</p>
+        <h3 class="pub-h">期刊论文</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., Boocock, M.*, &amp; Zhang, Y.* (2027). <span class="t">Concurrent validity of markerless motion capture for occupational lifting: Kinematics and ergonomic risk assessment.</span> <em>Applied Ergonomics</em>, 138, 104866.</div>
+            <div class="pub-links"><a class="tag" href="https://doi.org/10.1016/j.apergo.2026.104866">DOI</a><span class="tag muted">开放获取 · CC BY</span></div>
+            <details class="abs"><summary>摘要（英文）</summary><div><p>Markerless motion capture has the potential to enhance ergonomic risk assessment, but evidence remains limited for occupational manual handling tasks of increasing complexity. This study compared a multi-view system (OpenCap) and a monocular system (MediaPipe) against a marker-based reference system (Vicon) for lifting kinematics. Outcomes were assessed using the Rapid Entire Body Assessment (REBA) risk assessment tool. Twenty healthy participants performed three two-handed lifting tasks of increasing complexity under controlled laboratory conditions. Errors increased by 15–30% from symmetrical to asymmetric multi-planar tasks, with both systems demonstrating lower error in the sagittal plane (RMSE = 9.9–31.2°) than in the frontal and transverse planes. Both systems were reliable for symmetrical lifting, including high REBA agreement, but validity declined for tasks involving trunk rotation and walking. MediaPipe showed lower error for trunk and proximal joints, whereas OpenCap performed better for distal kinematics, informing practical system selection.</p><small>Keywords: markerless motion capture; manual handling; work-related musculoskeletal disorders. © 2026 The Authors, published by Elsevier Ltd under a CC BY licence.</small></div></details></li><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., &amp; Zhang, Y.* (2025). <span class="t">Posture prediction models in digital human modeling for ergonomic design: A systematic review.</span> <em>Medical Engineering &amp; Physics</em>, 143, 104391.</div>
+            <div class="pub-links"><a class="tag" href="https://doi.org/10.1016/j.medengphy.2025.104391">DOI</a><span class="tag muted">开放获取 · CC BY</span></div>
+            <details class="abs"><summary>摘要（英文）</summary><div><p>Posture prediction models have been widely used to support ergonomic design. This systematic review critically assessed the development, validation, and applications of posture prediction models in Digital Human Modeling (DHM). Following PRISMA guidelines, 24 studies were included from a search across nine academic databases, categorized into data-driven models (n = 12) and optimization-based models (n = 12). Data-driven models, particularly those employing neural network regression and artificial neural networks, demonstrated strong predictive accuracy and adaptability, but often lacked generalizability due to data imbalance and limited participant/task diversity. Optimization-based models, using algorithms such as gradient descent and genetic algorithms, showed high biomechanical fidelity but computational challenges and limited computer-aided design (CAD) integration. While a few models have been integrated with existing CAD software such as JACK and Santos™, most lacked ergonomic evaluation and real-time usability. Limitations identified include insufficient diverse datasets, computational inefficiencies, and limited validation in real-world conditions. Future research should prioritize model development supported by scalable motion data using computer vision-based technologies and hybrid strategies that combine learning-based inference with biomechanical simulation, offering a promising path toward achieving both accuracy and physiological realism in posture prediction.</p><small>Keywords: digital human modeling; posture prediction; human factors; ergonomics; CAD integration; work-related injuries; workplace safety; computer vision-based technique. © 2025 The Author(s), published by Elsevier Ltd on behalf of IPEM under a CC BY licence.</small></div></details></li></ol>
+        <h3 class="pub-h">待投稿论文</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. <span class="t">A hybrid two-phase framework for posture prediction of manual material handling tasks.</span></div><div class="pub-links"><span class="tag">论文已完成，即将投稿</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. <span class="t">Development of an online video-based ergonomic assessment system.</span></div><div class="pub-links"><span class="tag muted">初稿已完成，正在修改完善</span></div></li></ol>
+        <h3 class="pub-h">会议报告与论文集</h3>
+        <ol class="pubs"><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. (2026). <span class="t">From clipboard to camera: an online video-based ergonomic assessment system for New Zealand workplaces.</span> HFESNZ 第 40 届会议，新西兰惠灵顿，2026 年 9 月 16 日。</div><div class="pub-links"><span class="tag">口头报告</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Boocock, M., Nieuwenhuys, A., &amp; Zhang, Y. (2026). <span class="t">A Hybrid Two-Phase Framework for Posture Prediction of Manual Material Handling Tasks.</span> 第十届世界生物力学大会（WCB 2026），加拿大温哥华，2026 年 7 月 15 日。</div><div class="pub-links"><span class="tag">口头报告</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, Nieuwenhuys, A., Boocock, M., &amp; Zhang, Y. (2026). <span class="t">Concurrent Validity of Markerless Motion Capture for Assessing Manual Lifting Kinematics.</span> 第十届世界生物力学大会（WCB 2026），加拿大温哥华，2026 年 7 月 15 日。</div><div class="pub-links"><span class="tag">口头报告</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, &amp; Li, H. (2022). <span class="t">The effect of running economy in male runners wearing 3 types of footwear.</span> <em>Proceedings of the 40th Conference of the International Society of Biomechanics in Sports</em>, 40(1), Article 193.</div><div class="pub-links"><a class="tag" href="https://commons.nmu.edu/isbs/vol40/iss1/193/">ISBS 论文库</a></div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">The impact of four racing shoes on the running economy of runners.</span> <em>Proceedings of the 22nd National Sports Biomechanics Academic Conference</em>（中文）.</div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">Differences in running economy and energy consumption in different marathon running shoes.</span> <em>Proceedings of the Seventh International Symposium on Sports and Health</em>（中文）.</div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2022). <span class="t">Effects of Different Types of Running Shoes on Running Economy—Visual Analysis.</span> The 2nd Human Sports Science Conference（中文）.</div><div class="pub-links"><span class="tag">口头报告</span></div></li><li><div class="cite"><strong>Zhang, M.</strong>, et al. (2021). <span class="t">Research progress on the influence of strength training on the running economy of middle-distance runners.</span> <em>Medical Biomechanics</em>, 36(S8), 420（中文）.</div></li><li><div class="cite">Chen, X., <strong>Zhang, M.</strong>, &amp; Li, H. (2021). <em>Proceedings of the 21st National Sports Biomechanics Academic Exchange Conference</em>（中文）.</div></li></ol>
+      </div>
+    </section>
+
+    <section id="teaching-zh">
+      <div class="shell cols">
+        <div>
+          <h2>教学与科研指导</h2>
+          <dl class="dl"><div><dt>2024 – 至今</dt><dd><strong>科研指导</strong><span>指导研究生开展科研，包括动作捕捉数据采集、数据处理与分析，以及科研报告与学术论文写作。</span></dd></div><div><dt>2024 – 至今</dt><dd><strong>教学辅导</strong><span>在运动、体育与康复科学学院承担课程辅导与作业批改。</span></dd></div></dl>
+        </div>
+        <div>
+          <h2>奖学金</h2>
+          <dl class="dl"><div><dt>2023.10 – 2027.10</dt><dd>国家留学基金委（CSC）博士奖学金（资助 48 个月）<span>新西兰奥克兰大学</span></dd></div></dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills-zh">
+      <div class="shell">
+        <h2>技能</h2>
+        <p class="kicker">上述研究项目中使用的实验、建模、分析与软件技能。</p>
+        <dl class="methods"><dt>动作捕捉</dt><dd>Vicon（14 镜头；Plug-in Gait 全身模型，39 个标记点；Nexus）、Motion Analysis（8 镜头，Cortex）、OpenCap（多视角）与 MediaPipe（单摄像头）无标记动作捕捉</dd><dt>动力学与生理测试</dt><dd>Kistler 测力台；Cosmed K4b2 便携式气体代谢仪与最大摄氧量测试；血乳酸分析；等速肌力测试；无线表面肌电</dd><dt>建模</dt><dd>逆运动学与逆动力学、肌骨建模（OpenSim、Visual3D）、静态优化、数字人体建模、约束非线性优化（序列二次规划）</dd><dt>机器学习</dt><dd>姿态估计、预训练深度学习模型微调（PyTorch；低秩适配）、留一受试者交叉验证</dd><dt>工效学方法</dt><dd>RULA、REBA、修订版 NIOSH 搬举方程、L5/S1 压缩力估算与 3DSSPP 参考对比</dd><dt>统计与证据综合</dt><dd>RMSE 与归一化 RMSE、决定系数、重复测量方差分析、Spearman 相关、一致性分析、PRISMA 系统综述（SPSS、Python、MATLAB）</dd><dt>软件开发</dt><dd>Python（Streamlit、pandas、NumPy、SciPy、Plotly、ReportLab）、MATLAB</dd></dl>
+      </div>
+    </section>
+
+    <section id="cv-zh">
+      <div class="shell cols">
+        <div>
+          <h2>教育背景</h2>
+          <dl class="dl"><div><dt>2023 – 2027（预计）</dt><dd>博士 · 生物力学与人体工效学<span>新西兰奥克兰大学</span></dd></div><div><dt>2020 – 2023</dt><dd>运动人体科学硕士<span>中国北京体育大学</span></dd></div><div><dt>2016 – 2020</dt><dd>运动人体科学学士<span>中国北京体育大学</span></dd></div></dl>
+        </div>
+        <div>
+          <h2>学术简历</h2>
+          <p style="margin-top:0;color:var(--ink-soft)">完整学术简历包括教育背景、发表成果、科研经历、教学与技能。</p>
+          <ul class="links"><li><a class="primary" href="downloads/Mengjie_Zhang_Academic_CV_ZH_2026.pdf">下载学术简历（PDF）</a></li></ul>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <dialog class="demo-modal" id="demo-modal" aria-labelledby="demo-title">
+    <div class="modal-bar"><span id="demo-title"></span><button type="button" id="demo-close" data-en="Close" data-zh="关闭">Close</button></div>
+    <div class="modal-mods" id="demo-mods"><button type="button" data-mod="0" data-en="Postural risk" data-zh="姿势风险">Postural risk</button><button type="button" data-mod="1" data-en="Manual handling" data-zh="手工搬运">Manual handling</button><button type="button" data-mod="2" data-en="Static biomechanics" data-zh="静态生物力学">Static biomechanics</button><button type="button" data-mod="3" data-en="Dynamic biomechanics" data-zh="动态生物力学">Dynamic biomechanics</button></div>
+    <video id="demo-video" controls playsinline preload="metadata"></video>
+  </dialog>
+
+  <footer><div class="shell footer-row"><span>© 2026 Mengjie Zhang</span><span data-en="Figures are from the author&rsquo;s own publications and presentations." data-zh="页面图片均来自本人已发表的论文与报告。">Figures are from the author&rsquo;s own publications and presentations.</span></div></footer>
+  <script>
+    const enBtn = document.getElementById('lang-en');
+    const zhBtn = document.getElementById('lang-zh');
+    const en = document.getElementById('en-content');
+    const zh = document.getElementById('zh-content');
+    const texts = document.querySelectorAll('[data-en][data-zh]');
+    const navLinks = document.querySelectorAll('.nav-links a[data-base]');
+    function setLanguage(lang) {
+      const isZh = lang === 'zh';
+      document.documentElement.lang = isZh ? 'zh-CN' : 'en';
+      en.hidden = isZh; zh.hidden = !isZh;
+      enBtn.setAttribute('aria-pressed', String(!isZh));
+      zhBtn.setAttribute('aria-pressed', String(isZh));
+      texts.forEach(el => el.textContent = el.dataset[isZh ? 'zh' : 'en']);
+      navLinks.forEach(a => a.setAttribute('href', '#' + a.dataset.base + (isZh ? '-zh' : '')));
+      document.title = isZh ? 'Mengjie Zhang | 学术主页' : 'Mengjie Zhang | Academic Profile';
+      try { localStorage.setItem('academic-language', lang); } catch (e) {}
+    }
+    enBtn.addEventListener('click', () => setLanguage('en'));
+    zhBtn.addEventListener('click', () => setLanguage('zh'));
+    let saved = 'en';
+    try { saved = localStorage.getItem('academic-language') || 'en'; } catch (e) {}
+    setLanguage(saved);
+
+    const demos = [1, 2, 3, 4].map(n => ({ src: `assets/demo/module${n}.mp4`, poster: `assets/demo/module${n}-thumb.jpg` }));
+    demos.push({ src: 'assets/ra/mskine-demo.mp4', poster: 'assets/ra/mskine-demo-poster.jpg' });
+    const modal = document.getElementById('demo-modal');
+    const video = document.getElementById('demo-video');
+    const title = document.getElementById('demo-title');
+    const mods = document.getElementById('demo-mods');
+    const L = { en: { sys: 'Online ergonomic assessment system', ra: 'Single-camera musculoskeletal analysis · workflow' }, zh: { sys: '在线视频人体工效学评估系统', ra: '单摄像头肌骨分析 · 工作流程' } };
+    function play(k) {
+      const lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+      const isRa = k >= 4;
+      title.textContent = isRa ? L[lang].ra : L[lang].sys;
+      mods.hidden = isRa;
+      mods.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.mod) === k)));
+      video.poster = demos[k].poster; video.src = demos[k].src; video.play().catch(() => {});
+    }
+    document.querySelectorAll('[data-demo]').forEach(b => b.addEventListener('click', () => {
+      if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+      play(Number(b.dataset.demo));
+    }));
+    mods.querySelectorAll('button').forEach(b => b.addEventListener('click', () => play(Number(b.dataset.mod))));
+    const close = () => { video.pause(); modal.close ? modal.close() : modal.removeAttribute('open'); };
+    document.getElementById('demo-close').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    modal.addEventListener('close', () => { video.pause(); video.removeAttribute('src'); video.load(); });
+  </script>
+</body>
+</html>
