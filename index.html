@@ -163,6 +163,11 @@
     .demo-modal video { display: block; width: 100%; max-height: 80vh; background: #000; }
     .demo-modal .modal-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem; background: var(--night); font-size: .9rem; }
     .demo-modal .close { border: 1px solid rgba(255,255,255,.4); background: transparent; color: white; border-radius: 6px; padding: .35rem .75rem; cursor: pointer; font-weight: 750; }
+    .demo-card.with-phone { grid-template-columns: minmax(0, 1fr) 280px; align-items: stretch; }
+    .demo-card.with-phone .demo-body { grid-template-columns: 1fr; align-content: space-between; }
+    .phone-demo { order: 2; margin: 0; padding: clamp(1.35rem, 3vw, 2.4rem) clamp(1.35rem, 3vw, 2.4rem) clamp(1.35rem, 3vw, 2.4rem) 0; display: flex; flex-direction: column; gap: .6rem; }
+    .phone-demo video { display: block; width: 100%; aspect-ratio: 720 / 1270; border: 6px solid #06121e; border-radius: 22px; background: #000; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+    .phone-demo figcaption { color: #9fb3be; font-size: .8rem; line-height: 1.4; text-align: center; }
     .demo-unused { padding: 4rem 1.5rem; text-align: center; background: var(--night); color: #d5e2e7; }
     .experience-card { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(1.5rem, 5vw, 4.5rem); border-top: 1px solid var(--line); padding-top: 2rem; }
     .experience-card .role { margin: 0 0 .3rem; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.25; }
@@ -319,6 +324,8 @@
       .exp-demo { grid-template-columns: 1fr; }
       .subhead { grid-template-columns: 1fr; gap: .4rem; margin-top: 3rem; }
       .demo-card .demo-body { grid-template-columns: 1fr; }
+      .demo-card.with-phone { grid-template-columns: 1fr; }
+      .phone-demo { padding: 0 1.35rem 1.6rem; width: min(100%, 300px); justify-self: center; }
     }
     @media (max-width: 600px) {
       body { font-size: 16px; }
@@ -420,19 +427,20 @@
       <section class="projects" id="research">
         <div class="shell">
           <div class="section-head"><span class="number">03 / Research</span><h3>From ordinary video to ergonomic risk and biomechanical load.</h3></div>
-          <article class="demo-card">
+          <article class="demo-card with-phone">
             <div class="demo-body">
               <div>
                 <span class="tag">Featured doctoral project · Demo</span>
                 <h4>Online video-based ergonomic assessment system</h4>
                 <p>A web application that turns an ordinary workplace video into postural risk, manual-handling and biomechanical outputs, with an automatically generated report. Its design, development and evaluation form the core of the doctoral research.</p>
-                <p class="demo-note">Each module is demonstrated separately below, from video input to exported report. The recordings are silent, with on-screen captions.</p>
+                <p class="demo-note">The smartphone recording shows Module 01 from live camera capture to the exported PDF report. Each module is also demonstrated separately below. All recordings are silent, with on-screen captions.</p>
               </div>
               <div class="demo-actions">
                 <button class="button" type="button" data-demo-open="0">▶ Watch the demos</button>
                 <small>The live system is currently in expert evaluation and iterative refinement. Access for research collaborators is available on request.</small>
               </div>
             </div>
+            <figure class="phone-demo"><video src="assets/demo/module1-smartphone.mp4" poster="assets/demo/module1-smartphone-poster.jpg" controls muted playsinline preload="metadata" aria-label="Smartphone recording of Module 01: live camera capture, real-time RULA and REBA scoring, results and the exported PDF report"></video><figcaption>Recorded on a smartphone · Module 01 · 0:57</figcaption></figure>
           </article>
           <div class="module-demos"><button class="module-tile" type="button" data-demo-open="0" aria-label="Watch module 1: Postural risk"><span class="module-thumb"><img src="assets/demo/module1-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">3:00</span></span><span class="module-meta"><span class="module-no">Module 01</span><strong>Postural risk</strong><em>RULA &amp; REBA</em><span class="module-desc">Frame-by-frame RULA and REBA scoring, the body regions driving each score and targeted recommendations.</span></span></button><button class="module-tile" type="button" data-demo-open="1" aria-label="Watch module 2: Manual handling"><span class="module-thumb"><img src="assets/demo/module2-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:35</span></span><span class="module-meta"><span class="module-no">Module 02</span><strong>Manual handling</strong><em>Revised NIOSH Lifting Equation</em><span class="module-desc">Recommended weight limit, lifting index and the task variables that limit it.</span></span></button><button class="module-tile" type="button" data-demo-open="2" aria-label="Watch module 3: Static biomechanics"><span class="module-thumb"><img src="assets/demo/module3-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:43</span></span><span class="module-meta"><span class="module-no">Module 03</span><strong>Static biomechanics</strong><em>3D inverse dynamics</em><span class="module-desc">Joint moments and L5/S1 compression for a selected posture.</span></span></button><button class="module-tile" type="button" data-demo-open="3" aria-label="Watch module 4: Dynamic biomechanics"><span class="module-thumb"><img src="assets/demo/module4-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:56</span></span><span class="module-meta"><span class="module-no">Module 04</span><strong>Dynamic biomechanics</strong><em>Whole-cycle analysis</em><span class="module-desc">Joint kinematics, kinetics and spinal load across a complete movement cycle.</span></span></button></div>
         </div>
@@ -621,12 +629,13 @@
       <section class="dark"><div class="shell"><div class="section-head"><span class="number">02 / 专长</span><h3>四个相互连接的专业领域。</h3></div><div class="expertise"><article><span class="index">01</span><h4>职业生物力学</h4><p>量化搬举与手工搬运任务中的关节运动学、关节动力学与腰椎负荷。</p><p class="skills"><span>技术能力</span>逆动力学、肌骨建模（OpenSim）、测力台分析、Visual3D</p></article><article><span class="index">02</span><h4>人体运动分析</h4><p>使用标记点与无标记系统采集并验证人体运动，从实验室延伸到单摄像头视频。</p><p class="skills"><span>技术能力</span>Vicon、Motion Analysis（Cortex）、OpenCap、MediaPipe、OpenCV、姿态估计</p></article><article><span class="index">03</span><h4>数字人体建模</h4><p>为设计阶段的工效学评估预测作业姿态。</p><p class="skills"><span>技术能力</span>约束优化（SQP）、逆运动学、MATLAB</p></article><article><span class="index">04</span><h4>软件开发</h4><p>开发网页端工效学评估应用，覆盖从数据流程到自动报告的完整链条。</p><p class="skills"><span>技术能力</span>Python、Streamlit、PyTorch、pandas、NumPy、SciPy、Plotly、ReportLab</p></article></div><div class="methods-row"><span>研究与测试方法</span><p>重复测量实验 · 效度与一致性分析 · 统计分析（SPSS、Python）· 系统综述 · 运动生理测试（气体代谢、最大摄氧量、等速肌力、表面肌电）</p></div></div></section>
 
       <section class="projects" id="research-zh"><div class="shell"><div class="section-head"><span class="number">03 / 研究</span><h3>从普通视频到工效学风险与生物力学负荷。</h3></div>
-        <article class="demo-card">
+        <article class="demo-card with-phone">
           <div class="demo-body">
             <div><span class="tag">博士代表项目 · 演示</span><h4>在线视频人体工效学评估系统</h4><p>把普通工作现场视频转化为姿势风险、手工搬运与生物力学评估结果，并自动生成报告的网页应用。系统的设计、开发与评价是本人博士研究的核心工作。</p>
-              <p class="demo-note">下方分别演示四个模块，从视频输入到报告导出。演示视频为无声录屏，配有屏幕字幕。</p></div>
+              <p class="demo-note">手机实录视频展示了模块 01 从摄像头实时采集到导出 PDF 报告的完整流程，下方分别演示四个模块。演示视频均为无声录屏，配有屏幕字幕。</p></div>
             <div class="demo-actions"><button class="button" type="button" data-demo-open="0">▶ 观看演示</button><small>在线系统目前正在进行专家评估与迭代优化，科研合作者可申请访问。</small></div>
           </div>
+          <figure class="phone-demo"><video src="assets/demo/module1-smartphone.mp4" poster="assets/demo/module1-smartphone-poster.jpg" controls muted playsinline preload="metadata" aria-label="模块 01 手机实录：摄像头实时采集、实时 RULA 与 REBA 评分、分析结果与导出的 PDF 报告"></video><figcaption>智能手机实录 · 模块 01 · 0:57</figcaption></figure>
         </article>
         <div class="module-demos"><button class="module-tile" type="button" data-demo-open="0" aria-label="观看模块 1：姿势风险"><span class="module-thumb"><img src="assets/demo/module1-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">3:00</span></span><span class="module-meta"><span class="module-no">模块 01</span><strong>姿势风险</strong><em>RULA 与 REBA</em><span class="module-desc">逐帧计算 RULA 与 REBA 评分，识别主导评分的身体部位并给出针对性建议。</span></span></button><button class="module-tile" type="button" data-demo-open="1" aria-label="观看模块 2：手工搬运"><span class="module-thumb"><img src="assets/demo/module2-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:35</span></span><span class="module-meta"><span class="module-no">模块 02</span><strong>手工搬运</strong><em>修订版 NIOSH 搬举方程</em><span class="module-desc">推荐重量限值、搬举指数及起限制作用的任务变量。</span></span></button><button class="module-tile" type="button" data-demo-open="2" aria-label="观看模块 3：静态生物力学"><span class="module-thumb"><img src="assets/demo/module3-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:43</span></span><span class="module-meta"><span class="module-no">模块 03</span><strong>静态生物力学</strong><em>三维逆动力学</em><span class="module-desc">选定姿势下的关节力矩与 L5/S1 压缩力。</span></span></button><button class="module-tile" type="button" data-demo-open="3" aria-label="观看模块 4：动态生物力学"><span class="module-thumb"><img src="assets/demo/module4-thumb.jpg" alt="" loading="lazy"><span class="play small"></span><span class="dur">1:56</span></span><span class="module-meta"><span class="module-no">模块 04</span><strong>动态生物力学</strong><em>全周期分析</em><span class="module-desc">完整动作周期中的关节运动学、动力学与脊柱负荷。</span></span></button></div></div></section>
 
