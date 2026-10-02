@@ -102,6 +102,8 @@
     .video { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #f4f6f8; }
     .video video { width: 100%; }
     .caption { margin-top: .5rem; color: var(--muted); font-size: .82rem; }
+    .demo-scope { margin: 1.3rem 0 0; padding: .85rem 1rem; border-left: 3px solid var(--accent); background: #eef6f5; border-radius: 0 6px 6px 0; color: var(--ink); font-size: .93rem; }
+    .demo-scope a { color: var(--accent); }
 
     /* modules */
     .mods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
@@ -290,13 +292,14 @@
           <ul class="ticks">
             <li>A video can be recorded directly with the device camera or uploaded.</li>
             <li>No markers, wearable sensors, force plates or laboratory are required.</li>
-            <li>RULA and REBA scores and joint angles are displayed in real time during analysis.</li>
+            <li>In Module 1, joint angles and RULA and REBA scores are displayed in real time during analysis.</li>
             <li>Results can be exported as a PDF report with intervention recommendations.</li>
           </ul>
+          <p class="demo-scope"><strong>Scope of the recording.</strong> The recording shows Module 1 (RULA and REBA) as an example of the workflow. The other three modules run from the same video: manual handling (NIOSH Recommended Weight Limit and Lifting Index), static biomechanics (joint moments and L5/S1 compression and shear) and dynamic biomechanics across full movement cycles (<a href="#modules">Section 5</a>).</p>
         </div>
         <div>
           <div class="phone"><video src="assets/module1-smartphone.mp4" poster="assets/module1-smartphone-poster.jpg" controls muted playsinline preload="metadata" aria-label="Smartphone recording of Module 1, from live camera capture to the exported PDF report"></video></div>
-          <p class="caption">Recorded on a smartphone: Module 1 (postural risk), from live camera capture and real-time analysis to the exported PDF report (57 s, silent, with captions). Current research interface.</p>
+          <p class="caption">Recorded on a smartphone, using Module 1 (postural risk) as the example: from live camera capture and real-time analysis to the exported PDF report (57 s, silent, with captions). Current research interface.</p>
         </div>
       </div>
     </section>
