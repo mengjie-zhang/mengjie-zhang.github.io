@@ -150,9 +150,9 @@
       <div class="kpis" role="list">
         <div class="kpi" role="listitem"><b>93.9%</b><span>REBA risk-category agreement with the laboratory reference (132 trials)</span></div>
         <div class="kpi" role="listitem"><b>0.13</b><span>Mean absolute error of the NIOSH Lifting Index</span></div>
-        <div class="kpi" role="listitem"><b>−0.4%</b><span>Mean bias of L5/S1 compression vs 3DSSPP (−10.7 N)</span></div>
-        <div class="kpi" role="listitem"><b>−3.5%</b><span>Mean bias of L5/S1 moment vs 3DSSPP (−4.9 N·m)</span></div>
-        <div class="kpi" role="listitem"><b>4.5/5</b><span>Overall rating from two expert ergonomists (TAM questionnaire)</span></div>
+        <div class="kpi" role="listitem"><b>+1.8%</b><span>Mean difference in L5/S1 compression vs 3DSSPP (+44.7 N)</span></div>
+        <div class="kpi" role="listitem"><b>+8.7%</b><span>Systematic offset in L5/S1 moment vs 3DSSPP (ICC(A,1) 0.84)</span></div>
+        <div class="kpi" role="listitem"><b>4/4</b><span>Experts who rated all five acceptance constructs positively</span></div>
       </div>
       <p class="status-note">The system is a research prototype. Results are from controlled laboratory lifting tasks, and the manuscript is in preparation. The user interface will be redesigned for field deployment.</p>
     </div>
@@ -252,29 +252,27 @@
               <div class="bar"><span>REBA</span><div class="track"><div class="fill" style="width:93.9%"></div><div class="ci" style="left:87.4%;width:11.8%"></div></div><b>93.9%</b></div>
               <div class="bar"><span>RULA</span><div class="track"><div class="fill" style="width:91.7%"></div><div class="ci" style="left:85.1%;width:12.1%"></div></div><b>91.7%</b></div>
             </div>
-            <p>Risk-category agreement [REBA 87.4–99.2%; RULA 85.1–97.2%]. Mean absolute score error: REBA 0.89, RULA 0.11 points.</p>
+            <p>Risk-category agreement at the peak posture (maximum trunk inclination) [REBA 87.4–99.2%; RULA 85.1–97.2%]. Mean absolute score error: REBA 0.86, RULA 0.11 points. Agreement was lower over the whole lifting cycle.</p>
           </div>
           <div class="res">
             <span class="mod">Module 2 · Manual handling</span>
             <span class="n">50 trials · 18 participants · Revised NIOSH Lifting Equation</span>
             <div class="big">0.13<small>Lifting Index MAE</small></div>
             <div class="big" style="font-size:1.6rem">1.3 kg<small>Recommended Weight Limit MAE</small></div>
-            <p>Mean Lifting Index 1.00 from the system vs 1.05 from the reference.</p>
+            <p>Mean bias of the Lifting Index −0.05 [−0.12, 0.01]. Category disagreements occurred only in trials close to LI = 1.0.</p>
           </div>
           <div class="res">
             <span class="mod">Module 3 · Static biomechanics</span>
-            <span class="n">30 trials · vs 3DSSPP</span>
-            <div class="pair">
-              <div class="bar"><span>System</span><div class="track"><div class="fill" style="width:80.3%"></div></div><b>2,410</b></div>
-              <div class="bar"><span>3DSSPP</span><div class="track"><div class="fill" style="width:80.7%;background:var(--ink)"></div></div><b>2,421</b></div>
-            </div>
-            <p>Mean L5/S1 compression (N). Mean bias (system − 3DSSPP): compression −10.7 N (−0.4%), moment −4.9 N·m (−3.5%). Mean absolute error: compression 156 N, moment 11.8 N·m. ICC: moment 0.73 [0.51–0.86]; anterior–posterior shear 0.96 [0.92–0.98].</p>
+            <span class="n">30 trials · 16 participants · vs 3DSSPP</span>
+            <div class="big">+8.7%<small>L5/S1 moment, systematic offset</small></div>
+            <div class="big" style="font-size:1.6rem">−7.2%<small>Anteroposterior shear, systematic offset</small></div>
+            <p>Compression showed a small mean difference (+1.8%) but higher variability between trials. ICC(A,1): moment 0.84 [0.66–0.89]; compression 0.78 [0.60–0.87]; anteroposterior shear 0.89 [0.64–0.95].</p>
           </div>
         </div>
         <p class="results-note">Upper-limb joint moments show lower agreement with the current reduced upper-body model and are reported as indicative only.</p>
         <div class="tam">
-          <b>4.5/5</b>
-          <p><strong style="color:white">Expert end-user evaluation.</strong> Two expert ergonomists used the system and rated it 4.5 out of 5 overall on a Technology Acceptance Model (TAM) questionnaire. The system has since been refined based on their feedback, and the evaluation is continuing with further experts.</p>
+          <b>4/4</b>
+          <p><strong style="color:white">Expert end-user evaluation.</strong> All four experts rated the five acceptance constructs positively in both rounds, with construct scores between 3.60 and 5.00. Before the second round, guidance was added at the configuration options, a task-context input was added to adapt the recommendations, and the frame with the highest risk score was displayed beside the score.</p>
         </div>
       </div>
     </section>
