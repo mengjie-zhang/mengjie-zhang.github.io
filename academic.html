@@ -178,6 +178,23 @@
     .modal-bar button, .modal-mods button { border: 1px solid rgba(255,255,255,.4); background: transparent; color: white; border-radius: 6px; padding: .3rem .7rem; cursor: pointer; font: inherit; font-size: .85rem; font-weight: 700; }
     .modal-mods { display: flex; flex-wrap: wrap; gap: .4rem; padding: .6rem 1rem; background: var(--ink); }
     .modal-mods button[aria-pressed="true"] { background: var(--accent-bright); border-color: var(--accent-bright); color: var(--ink); }
+    /* beyond research */
+    .life-intro { max-width: 780px; margin-bottom: 1.8rem; }
+    .life-intro .lead { margin: 0; color: var(--ink-soft); }
+    .activities { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+    .activities li { padding: .3rem .7rem; border-radius: 999px; background: white; border: 1px solid var(--line); font-size: .84rem; font-weight: 700; color: var(--ink); }
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 300px 270px; gap: 10px; }
+    .tile { position: relative; margin: 0; overflow: hidden; border-radius: 4px; background: var(--ink); }
+    .tile img, .tile video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tile.wide { grid-column: span 2; }
+    .tile figcaption { position: absolute; left: .7rem; bottom: .7rem; padding: .26rem .6rem; border-radius: 999px; background: rgba(6,26,45,.72); color: white; font-size: .76rem; font-weight: 750; letter-spacing: .02em; backdrop-filter: blur(6px); }
+    .tile .motion { position: absolute; top: .7rem; right: .7rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-bright); box-shadow: 0 0 0 4px rgba(98,217,203,.3); }
+    .team-card { display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem; background: var(--ink); color: white; }
+    .team-card .eyebrow { margin: 0; color: var(--accent-bright); font-size: .74rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .team-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 1.35rem; line-height: 1.2; }
+    .team-card p { margin: 0; color: #c3d3da; font-size: .86rem; line-height: 1.5; }
+    @media (max-width: 860px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: 230px; } }
+    @media (max-width: 560px) { .gallery { grid-auto-rows: 180px; gap: 8px; } .team-card ul { font-size: 1.15rem; } }
 </style>
 </head>
 <body>
@@ -185,7 +202,7 @@
     <div class="shell nav">
       <a class="brand" href="#top">Mengjie Zhang<span data-en="Academic profile" data-zh="学术主页">Academic profile</span></a>
       <nav class="nav-links" aria-label="Sections">
-        <a href="#research" data-base="research" data-en="Research" data-zh="研究">Research</a><a href="#projects" data-base="projects" data-en="Projects" data-zh="项目">Projects</a><a href="#publications" data-base="publications" data-en="Publications" data-zh="成果">Publications</a><a href="#teaching" data-base="teaching" data-en="Teaching" data-zh="教学">Teaching</a><a href="#skills" data-base="skills" data-en="Skills" data-zh="技能">Skills</a><a href="#cv" data-base="cv" data-en="CV" data-zh="简历">CV</a>
+        <a href="#research" data-base="research" data-en="Research" data-zh="研究">Research</a><a href="#projects" data-base="projects" data-en="Projects" data-zh="项目">Projects</a><a href="#publications" data-base="publications" data-en="Publications" data-zh="成果">Publications</a><a href="#teaching" data-base="teaching" data-en="Teaching" data-zh="教学">Teaching</a><a href="#skills" data-base="skills" data-en="Skills" data-zh="技能">Skills</a><a href="#life" data-base="life" data-en="Beyond research" data-zh="研究之外">Beyond research</a><a href="#cv" data-base="cv" data-en="CV" data-zh="简历">CV</a>
         <div class="language" aria-label="Language selection"><button id="lang-en" type="button" aria-pressed="true">EN</button><button id="lang-zh" type="button" aria-pressed="false">中文</button></div>
       </nav>
     </div>
@@ -300,6 +317,29 @@
         <h2>Skills</h2>
         <p class="kicker">Laboratory, modelling, analytical and software skills applied across the projects above.</p>
         <dl class="methods"><dt>Motion capture</dt><dd>Vicon (14-camera; Plug-in Gait full-body model, 39 markers; Nexus), Motion Analysis (8-camera, Cortex), markerless capture with OpenCap (multi-view) and MediaPipe (single camera)</dd><dt>Kinetics and physiology</dt><dd>Kistler force platforms; Cosmed K4b2 portable gas analyser and VO<sub>2</sub>max testing; blood lactate analysis; isokinetic dynamometry; wireless surface EMG</dd><dt>Modelling</dt><dd>Inverse kinematics and inverse dynamics, musculoskeletal modelling (OpenSim, Visual3D), static optimisation, digital human modelling, constrained nonlinear optimisation (sequential quadratic programming)</dd><dt>Machine learning</dt><dd>Pose estimation, fine-tuning of pretrained deep-learning models (PyTorch; low-rank adaptation), leave-one-subject-out cross-validation</dd><dt>Ergonomic methods</dt><dd>RULA, REBA, the Revised NIOSH Lifting Equation, L5/S1 compression estimation and 3DSSPP reference comparison</dd><dt>Statistics and evidence synthesis</dt><dd>RMSE and normalised RMSE, coefficient of determination, repeated-measures ANOVA, Spearman correlation, agreement analysis, PRISMA-guided systematic review (SPSS, Python, MATLAB)</dd><dt>Software development</dt><dd>Python (Streamlit, pandas, NumPy, SciPy, Plotly, ReportLab), MATLAB</dd></dl>
+      </div>
+    </section>
+
+    <section id="life" class="life">
+      <div class="shell">
+        <h2>Beyond research</h2>
+        <p class="kicker">Hiking, gym, swimming and team sport.</p>
+        <div class="life-intro">
+          <p class="lead">Sport keeps me curious about how bodies move and adapt. Most weeks include gym training and a swim; weekends are for hiking, bouldering and team games. Feeling load, fatigue and technique first-hand keeps my biomechanics grounded.</p>
+          <ul class="activities" aria-label="Activities"><li>Hiking</li><li>Gym</li><li>Swimming</li><li>Bouldering</li><li>Badminton</li><li>Contact rugby</li><li>Ultimate frisbee</li></ul>
+        </div>
+        <div class="gallery">
+            <figure class="tile wide"><img src="assets/life/hiking.jpg" alt="Mengjie hiking on a volcanic ridge" loading="lazy" style="object-position: 50% 45%"><figcaption>Hiking</figcaption></figure>
+            <figure class="tile"><img src="assets/life/gym.jpg" alt="Strength training at the gym" loading="lazy" style="object-position: 50% 30%"><figcaption>Gym</figcaption></figure>
+            <figure class="tile"><img src="assets/life/bouldering-2.jpg" alt="Mengjie bouldering on an indoor wall" loading="lazy" style="object-position: 50% 40%"><figcaption>Bouldering</figcaption></figure>
+            <figure class="tile wide"><video src="assets/life/swimming.mp4" poster="assets/life/swimming-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Swimming freestyle in an indoor pool"></video><span class="motion" aria-hidden="true"></span><figcaption>Swimming</figcaption></figure>
+            <div class="tile team-card">
+              <p class="eyebrow">Team sport</p>
+              <ul><li>Badminton</li><li>Ultimate frisbee</li><li>Contact rugby</li></ul>
+              <p>Fast decisions, shared effort and a lot of running.</p>
+            </div>
+            <figure class="tile"><img src="assets/life/rugby.jpg" alt="Mengjie catching a rugby ball during a beach session" loading="lazy" style="object-position: 40% 62%"><figcaption>Contact rugby</figcaption></figure>
+          </div>
       </div>
     </section>
 
@@ -428,6 +468,29 @@
       </div>
     </section>
 
+    <section id="life-zh" class="life">
+      <div class="shell">
+        <h2>研究之外</h2>
+        <p class="kicker">徒步、健身、游泳与团队运动。</p>
+        <div class="life-intro">
+          <p class="lead">运动让我始终对人体如何运动、如何适应保持好奇。平日里去健身房训练和游泳，周末去徒步、攀岩或参加团队运动。亲身体会负荷、疲劳与技术动作，也让我的生物力学研究更接地气。</p>
+          <ul class="activities" aria-label="运动爱好"><li>徒步</li><li>健身</li><li>游泳</li><li>抱石攀岩</li><li>羽毛球</li><li>接触式橄榄球</li><li>极限飞盘</li></ul>
+        </div>
+        <div class="gallery">
+            <figure class="tile wide"><img src="assets/life/hiking.jpg" alt="Mengjie 在火山山脊徒步" loading="lazy" style="object-position: 50% 45%"><figcaption>徒步</figcaption></figure>
+            <figure class="tile"><img src="assets/life/gym.jpg" alt="健身房力量训练" loading="lazy" style="object-position: 50% 30%"><figcaption>健身</figcaption></figure>
+            <figure class="tile"><img src="assets/life/bouldering-2.jpg" alt="Mengjie 在室内攀岩墙抱石" loading="lazy" style="object-position: 50% 40%"><figcaption>抱石攀岩</figcaption></figure>
+            <figure class="tile wide"><video src="assets/life/swimming.mp4" poster="assets/life/swimming-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="在室内泳池自由泳"></video><span class="motion" aria-hidden="true"></span><figcaption>游泳</figcaption></figure>
+            <div class="tile team-card">
+              <p class="eyebrow">团队运动</p>
+              <ul><li>羽毛球</li><li>极限飞盘</li><li>接触式橄榄球</li></ul>
+              <p>快速决策、共同拼搏，还有大量奔跑。</p>
+            </div>
+            <figure class="tile"><img src="assets/life/rugby.jpg" alt="Mengjie 在沙滩训练中接橄榄球" loading="lazy" style="object-position: 40% 62%"><figcaption>接触式橄榄球</figcaption></figure>
+          </div>
+      </div>
+    </section>
+
     <section id="cv-zh">
       <div class="shell cols">
         <div>
@@ -458,6 +521,9 @@
     const zh = document.getElementById('zh-content');
     const texts = document.querySelectorAll('[data-en][data-zh]');
     const navLinks = document.querySelectorAll('.nav-links a[data-base]');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.gallery video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+    }
     function setLanguage(lang) {
       const isZh = lang === 'zh';
       document.documentElement.lang = isZh ? 'zh-CN' : 'en';
